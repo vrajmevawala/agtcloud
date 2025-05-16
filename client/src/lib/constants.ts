@@ -18,17 +18,17 @@ export const productCategories = [
       { name: "Cloud Services", slug: "cloud-services", description: "Full-service cloud computing platform" },
       { name: "Virtual Machines", slug: "virtual-machines", description: "Scalable computing resources on demand" },
       { name: "Database Management", slug: "database", description: "Managed database services for all needs" },
-      { name: "DevOps", slug: "devops", description: "Tools for development and operations integration" }
+      { name: "Microsoft Dynamic 365", slug: "ms-dynamic-365", description: "Cloud-Based CRM and ERP solution for business management." }
     ]
   },
   {
     name: "Busy Solutions",
     slug: "busy",
     services: [
-      { name: "Accounting", slug: "accounting", description: "Complete financial management with GST-ready reporting" },
-      { name: "Inventory Management", slug: "inventory", description: "Real-time stock tracking and management" },
-      { name: "GST Compliance", slug: "gst", description: "Simplified GST compliance and filing" },
-      { name: "Payroll", slug: "payroll", description: "Automated salary processing and tax calculations" }
+      { name: "Desktop", slug: "desktop", description: "Experience Efficient Accounting on Desktop" },
+      { name: "Mobile", slug: "mobile", description: "Manage business on your fingers" },
+      { name: "Online", slug: "online", description: "Most secured accounting on the cloud" },
+      { name: "Recom", slug: "recom", description: "Ecommerce reconciliation in 1 min" }
     ]
   },
   {

@@ -319,7 +319,9 @@ const zohoPricing = {
   }
 };
 
-const AzureCalculator = lazy(() => import('../../../../azure-calculator/components/azure-calculator'));
+const handleAzureCalculator = () => {
+  window.open('https://azure.microsoft.com/en-in/pricing/calculator/?ef_id=k_Cj0KCQjwxJvBBhDuARIsAGUgNfgGwGYCrvY_Hz2fz8J6JvXJgQjn3-BP09vP6lniV8VypWw3G6A96nEaAniLEALw_wcB_k&OCID=AIDcmmf1elj9v5_SEM_k_Cj0KCQjwxJvBBhDuARIsAGUgNfgGwGYCrvY_Hz2fz8J6JvXJgQjn3-BP09vP6lniV8VypWw3G6A96nEaAniLEALw_wcB_k&gad_source=1&gad_campaignid=1634424385&gbraid=0AAAAADcJh_tGlntVhs1tru7qE9QWmzcHf&gclid=Cj0KCQjwxJvBBhDuARIsAGUgNfgGwGYCrvY_Hz2fz8J6JvXJgQjn3-BP09vP6lniV8VypWw3G6A96nEaAniLEALw_wcB', '_blank');
+};
 
 const handleTrial = () => {
   console.log("Start free trial clicked");
@@ -331,206 +333,268 @@ const handleContactSales = () => {
 
 const plans = {
   busy: {
-    perpetual: {
-      single: [
-        {
-          name: "EXPRESS",
-          price: "Free",
-          buttonText: "Download Now",
-          features: [
-            "100% Free Billing & Accounting",
-            "Create Accounting Vouchers: Invoices, Receipts, Inventory, JVs etc.",
-            "Accounting for Multiple Companies, Multiple Financial Years",
-            "MIS Reports: Ledgers, Receivables & Payables, Sales / Inventory / Profitability Analysis",
-            "Financial Statements: P&L, Balance Sheet"
-          ]
-        },
-        {
-          name: "BASIC",
-          price: "₹9,999",
-          buttonText: "Get Free Demo",
-          features: [
-            "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
-            "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
-            "Accounting: Ledger Reconciliation, All Books of Accounts and Final Results, Multi Company / Multi Financial Year",
-            "Inventory: Multiple Godown Inventory",
-            "Receivables & Payables: Configurable Payment Reminders",
-            "Data Security & User-wise Rights"
-          ]
-        },
-        {
-          name: "STANDARD",
-          price: "₹14,999",
-          buttonText: "Get Free Demo",
-          mostPopular: true,
-          features: [
-            "All Features of BASIC",
-            "GST: GST e-returns in JSON, Direct Upload of GSTR-1/ IFF, Auto E-Invoice & E-Way Bill Generation*, Auto Download & Reconcile GSTR 1/3B/2A/2B*, Check Party Return Status*",
-            "Billing/Invoicing: Orders, Quotations, Dynamic Payment QR Code, POS Screen for Fast Billing"
-          ]
-        },
-        {
-          name: "ENTERPRISE",
-          price: "₹19,999",
-          buttonText: "Get Free Demo",
-          features: [
-            "All Features of STANDARD",
-            "Data Security: Voucher/Master Approval & Rejection",
-            "Other Features: Message Center, Payroll Management, Indent Management, Call Management",
-            "GST-Segment: Managing Multiple GSTINs"
-          ]
-        }
-      ],
-      multi: [
-        {
-          name: "EXPRESS",
-          price: "Free",
-          buttonText: "Download Now",
-          features: [
-            "100% Free Billing & Accounting",
-            "Create Accounting Vouchers: Invoices, Receipts, Inventory, JVs etc.",
-            "Accounting for Multiple Companies, Multiple Financial Years",
-            "MIS Reports: Ledgers, Receivables & Payables, Sales / Inventory / Profitability Analysis",
-            "Financial Statements: P&L, Balance Sheet"
-          ]
-        },
-        {
-          name: "BASIC",
-          price: "₹24,999",
-          buttonText: "Get Free Demo",
-          features: [
-            "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
-            "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
-            "Accounting: Ledger Reconciliation, All Books of Accounts and Final Results, Multi Company / Multi Financial Year",
-            "Inventory: Multiple Godown Inventory",
-            "Receivables & Payables: Configurable Payment Reminders",
-            "Data Security & User-wise Rights"
-          ]
-        },
-        {
-          name: "STANDARD",
-          price: "₹39,999",
-          buttonText: "Get Free Demo",
-          mostPopular: true,
-          features: [
-            "All Features of BASIC",
-            "GST: GST e-returns in JSON, Direct Upload of GSTR-1/ IFF, Auto E-Invoice & E-Way Bill Generation*, Auto Download & Reconcile GSTR 1/3B/2A/2B*, Check Party Return Status*",
-            "Billing/Invoicing: Orders, Quotations, Dynamic Payment QR Code, POS Screen for Fast Billing"
-          ]
-        },
-        {
-          name: "ENTERPRISE",
-          price: "₹57,999",
-          buttonText: "Get Free Demo",
-          features: [
-            "All Features of STANDARD",
-            "Data Security: Voucher/Master Approval & Rejection",
-            "Other Features: Message Center, Payroll Management, Indent Management, Call Management",
-            "GST-Segment: Managing Multiple GSTINs"
-          ]
-        }
-      ]
+    desktop: {
+      perpetual: {
+        single: [
+          {
+            name: "BASIC",
+            price: "₹9,999",
+            buttonText: "Get Free Demo",
+            features: [
+              "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
+              "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
+              "Accounting: Ledger Reconciliation, All Books of Accounts and Final Results, Multi Company / Multi Financial Year",
+              "Inventory: Multiple Godown Inventory",
+              "Receivables & Payables: Configurable Payment Reminders",
+              "Data Security & User-wise Rights"
+            ]
+          },
+          {
+            name: "STANDARD",
+            price: "₹14,999",
+            buttonText: "Get Free Demo",
+            mostPopular: true,
+            features: [
+              "All Features of BASIC",
+              "GST: GST e-returns in JSON, Direct Upload of GSTR-1/ IFF, Auto E-Invoice & E-Way Bill Generation*, Auto Download & Reconcile GSTR 1/3B/2A/2B*, Check Party Return Status*",
+              "Billing/Invoicing: Orders, Quotations, Dynamic Payment QR Code, POS Screen for Fast Billing"
+            ]
+          },
+          {
+            name: "ENTERPRISE",
+            price: "₹19,999",
+            buttonText: "Get Free Demo",
+            features: [
+              "All Features of STANDARD",
+              "Data Security: Voucher/Master Approval & Rejection",
+              "Other Features: Message Center, Payroll Management, Indent Management, Call Management",
+              "GST-Segment: Managing Multiple GSTINs"
+            ]
+          }
+        ],
+        multi: [
+          {
+            name: "BASIC",
+            price: "₹24,999",
+            buttonText: "Get Free Demo",
+            features: [
+              "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
+              "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
+              "Accounting: Ledger Reconciliation, All Books of Accounts and Final Results, Multi Company / Multi Financial Year",
+              "Inventory: Multiple Godown Inventory",
+              "Receivables & Payables: Configurable Payment Reminders",
+              "Data Security & User-wise Rights"
+            ]
+          },
+          {
+            name: "STANDARD",
+            price: "₹39,999",
+            buttonText: "Get Free Demo",
+            mostPopular: true,
+            features: [
+              "All Features of BASIC",
+              "GST: GST e-returns in JSON, Direct Upload of GSTR-1/ IFF, Auto E-Invoice & E-Way Bill Generation*, Auto Download & Reconcile GSTR 1/3B/2A/2B*, Check Party Return Status*",
+              "Billing/Invoicing: Orders, Quotations, Dynamic Payment QR Code, POS Screen for Fast Billing"
+            ]
+          },
+          {
+            name: "ENTERPRISE",
+            price: "₹57,999",
+            buttonText: "Get Free Demo",
+            features: [
+              "All Features of STANDARD",
+              "Data Security: Voucher/Master Approval & Rejection",
+              "Other Features: Message Center, Payroll Management, Indent Management, Call Management",
+              "GST-Segment: Managing Multiple GSTINs"
+            ]
+          }
+        ]
+      },
+      subscription: {
+        single: [
+          {
+            name: "BLUE",
+            price: "₹4,999/year",
+            buttonText: "Get Free Demo",
+            features: [
+              "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
+              "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
+              "Accounting: Ledger Reconciliation, All Books of Accounts and Final Results, Multi Company / Multi Financial Year",
+              "Inventory: Multiple Godown Inventory",
+              "Receivables & Payables: Configurable Payment Reminders",
+              "Data Security & User-wise Rights"
+            ]
+          },
+          {
+            name: "SAFFRON",
+            price: "₹6,999/year",
+            buttonText: "Get Free Demo",
+            mostPopular: true,
+            features: [
+              "All Features of BLUE",
+              "GST: GST e-returns in JSON, Direct Upload of GSTR-1/ IFF, Auto E-Invoice & E-Way Bill Generation*, Auto Download & Reconcile GSTR 1/3B/2A/2B*, Check Party Return Status*",
+              "Billing/Invoicing: Orders, Quotations, Dynamic Payment QR Code, POS Screen for Fast Billing"
+            ]
+          },
+          {
+            name: "EMERALD",
+            price: "₹9,999/year",
+            buttonText: "Get Free Demo",
+            features: [
+              "All Features of SAFFRON",
+              "Data Security: Voucher/Master Approval & Rejection",
+              "Other Features: Message Center, Payroll Management, Indent Management, Call Management",
+              "GST-Segment: Managing Multiple GSTINs"
+            ]
+          }
+        ],
+        multi: [
+          {
+            name: "BLUE",
+            price: "₹12,499/year",
+            buttonText: "Get Free Demo",
+            features: [
+              "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
+              "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
+              "Accounting: Ledger Reconciliation, All Books of Accounts and Final Results, Multi Company / Multi Financial Year",
+              "Inventory: Multiple Godown Inventory",
+              "Receivables & Payables: Configurable Payment Reminders",
+              "Data Security & User-wise Rights"
+            ]
+          },
+          {
+            name: "SAFFRON",
+            price: "₹17,999/year",
+            buttonText: "Get Free Demo",
+            mostPopular: true,
+            features: [
+              "All Features of BLUE",
+              "GST: GST e-returns in JSON, Direct Upload of GSTR-1/ IFF, Auto E-Invoice & E-Way Bill Generation*, Auto Download & Reconcile GSTR 1/3B/2A/2B*, Check Party Return Status*",
+              "Billing/Invoicing: Orders, Quotations, Dynamic Payment QR Code, POS Screen for Fast Billing"
+            ]
+          },
+          {
+            name: "EMERALD",
+            price: "₹24,999/year",
+            buttonText: "Get Free Demo",
+            features: [
+              "All Features of SAFFRON",
+              "Data Security: Voucher/Master Approval & Rejection",
+              "Other Features: Message Center, Payroll Management, Indent Management, Call Management",
+              "GST-Segment: Managing Multiple GSTINs"
+            ]
+          }
+        ]
+      }
     },
-    subscription: {
-      single: [
-        {
-          name: "EXPRESS",
-          price: "Free",
-          buttonText: "Download Now",
-          features: [
-            "100% Free Billing & Accounting",
-            "Create Accounting Vouchers: Invoices, Receipts, Inventory, JVs etc.",
-            "Accounting for Multiple Companies, Multiple Financial Years",
-            "MIS Reports: Ledgers, Receivables & Payables, Sales / Inventory / Profitability Analysis",
-            "Financial Statements: P&L, Balance Sheet"
-          ]
+    mobile: [
+      {
+        name: "Mobile (1-4 Devices)",
+        description: "BUSY Mobile App for 1-4 Devices",
+        price: "₹2,499/year",
+        features: [
+          "Order taking & invoicing on the go",
+          "Ledger sharing",
+          "WhatsApp sharing",
+          "Barcode/QR code billing",
+          "Auto cloud sync",
+          "Collect payments on the go"
+        ]
+      },
+      {
+        name: "Mobile (5+ Devices)",
+        description: "BUSY Mobile App for 5 & More Devices",
+        price: "₹1,999/year",
+        features: [
+          "Order taking & invoicing on the go",
+          "Ledger sharing",
+          "WhatsApp sharing",
+          "Barcode/QR code billing",
+          "Auto cloud sync",
+          "Collect payments on the go"
+        ]
+      }
+    ],
+    online: {
+      access: {
+        annually: {
+          price: "₹10,800",
+          additionalCompany: "₹7,200",
+          buttonText: "Get Free Demo"
         },
-        {
-          name: "BLUE",
-          price: "₹4,999/year",
-          buttonText: "Get Free Demo",
-          features: [
-            "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
-            "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
-            "Accounting: Ledger Reconciliation, All Books of Accounts and Final Results, Multi Company / Multi Financial Year",
-            "Inventory: Multiple Godown Inventory",
-            "Receivables & Payables: Configurable Payment Reminders",
-            "Data Security & User-wise Rights"
-          ]
-        },
-        {
-          name: "SAFFRON",
-          price: "₹6,999/year",
-          buttonText: "Get Free Demo",
-          mostPopular: true,
-          features: [
-            "All Features of BLUE",
-            "GST: GST e-returns in JSON, Direct Upload of GSTR-1/ IFF, Auto E-Invoice & E-Way Bill Generation*, Auto Download & Reconcile GSTR 1/3B/2A/2B*, Check Party Return Status*",
-            "Billing/Invoicing: Orders, Quotations, Dynamic Payment QR Code, POS Screen for Fast Billing"
-          ]
-        },
-        {
-          name: "EMERALD",
-          price: "₹9,999/year",
-          buttonText: "Get Free Demo",
-          features: [
-            "All Features of SAFFRON",
-            "Data Security: Voucher/Master Approval & Rejection",
-            "Other Features: Message Center, Payroll Management, Indent Management, Call Management",
-            "GST-Segment: Managing Multiple GSTINs"
-          ]
+        quarterly: {
+          price: "₹4,500",
+          additionalCompany: "₹2,250",
+          buttonText: "Get Free Demo"
         }
-      ],
-      multi: [
-        {
-          name: "EXPRESS",
-          price: "Free",
-          buttonText: "Download Now",
-          features: [
-            "100% Free Billing & Accounting",
-            "Create Accounting Vouchers: Invoices, Receipts, Inventory, JVs etc.",
-            "Accounting for Multiple Companies, Multiple Financial Years",
-            "MIS Reports: Ledgers, Receivables & Payables, Sales / Inventory / Profitability Analysis",
-            "Financial Statements: P&L, Balance Sheet"
-          ]
+      },
+      sql: {
+        annually: {
+          price: "₹16,800",
+          additionalCompany: "₹13,200",
+          buttonText: "Get Free Demo"
         },
-        {
-          name: "BLUE",
-          price: "₹12,499/year",
-          buttonText: "Get Free Demo",
-          features: [
-            "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
-            "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
-            "Accounting: Ledger Reconciliation, All Books of Accounts and Final Results, Multi Company / Multi Financial Year",
-            "Inventory: Multiple Godown Inventory",
-            "Receivables & Payables: Configurable Payment Reminders",
-            "Data Security & User-wise Rights"
-          ]
-        },
-        {
-          name: "SAFFRON",
-          price: "₹17,999/year",
-          buttonText: "Get Free Demo",
-          mostPopular: true,
-          features: [
-            "All Features of BLUE",
-            "GST: GST e-returns in JSON, Direct Upload of GSTR-1/ IFF, Auto E-Invoice & E-Way Bill Generation*, Auto Download & Reconcile GSTR 1/3B/2A/2B*, Check Party Return Status*",
-            "Billing/Invoicing: Orders, Quotations, Dynamic Payment QR Code, POS Screen for Fast Billing"
-          ]
-        },
-        {
-          name: "EMERALD",
-          price: "₹24,999/year",
-          buttonText: "Get Free Demo",
-          features: [
-            "All Features of SAFFRON",
-            "Data Security: Voucher/Master Approval & Rejection",
-            "Other Features: Message Center, Payroll Management, Indent Management, Call Management",
-            "GST-Segment: Managing Multiple GSTINs"
-          ]
+        quarterly: {
+          price: "₹5,250",
+          additionalCompany: "₹3,750",
+          buttonText: "Get Free Demo"
         }
-      ]
-    }
+      }
+    },
+    recom: [
+      {
+        name: "Recom (Orders up to 12,000)",
+        description: "BUSY Recom for up to 12,000 orders/year",
+        price: "₹36,000/year",
+        features: [
+          "E-commerce reconciliation",
+          "Order/return/payment tracking",
+          "GST management",
+          "Integrated accounting",
+          "Inventory management",
+          "Business reports"
+        ]
+      },
+      {
+        name: "Recom (Orders up to 30,000)",
+        description: "BUSY Recom for up to 30,000 orders/year",
+        price: "₹60,000/year",
+        features: [
+          "E-commerce reconciliation",
+          "Order/return/payment tracking",
+          "GST management",
+          "Integrated accounting",
+          "Inventory management",
+          "Business reports"
+        ]
+      },
+      {
+        name: "Recom (Orders up to 60,000)",
+        description: "BUSY Recom for up to 60,000 orders/year",
+        price: "₹96,000/year",
+        features: [
+          "E-commerce reconciliation",
+          "Order/return/payment tracking",
+          "GST management",
+          "Integrated accounting",
+          "Inventory management",
+          "Business reports"
+        ]
+      },
+      {
+        name: "Recom (Orders up to 1,20,000)",
+        description: "BUSY Recom for up to 1,20,000 orders/year",
+        price: "₹1,44,000/year",
+        features: [
+          "E-commerce reconciliation",
+          "Order/return/payment tracking",
+          "GST management",
+          "Integrated accounting",
+          "Inventory management",
+          "Business reports"
+        ]
+      }
+    ]
   },
   tally: {
     "aws": [
@@ -623,8 +687,8 @@ const plans = {
       {
         name: "TallyPrime Silver",
         description: "Suitable for businesses that need TallyPrime on a single PC",
-        price: "₹ 8,100",
-        oldPrice: "₹ 9,000",
+        price: "₹ 22,500",
+        oldPrice: "₹ 18,000",
         discount: "Get 10% off",
         effective: "Effective price 675/Month",
         gst: "+18% GST (₹ 1,458)",
@@ -643,8 +707,8 @@ const plans = {
       {
         name: "TallyPrime Gold",
         description: "Perfect for businesses needing multi-user access on multiple PCs",
-        price: "₹ 24,300",
-        oldPrice: "₹ 27,000",
+        price: "₹ 67,500",
+        oldPrice: "₹ 54,000",
         discount: "Get 10% off",
         effective: "Effective price 2025/Month",
         gst: "+18% GST (₹ 4,374)",
@@ -663,8 +727,8 @@ const plans = {
       {
         name: "TallyPrime Server",
         description: "Enterprise-grade solution for large organizations",
-        price: "₹ 48,600",
-        oldPrice: "₹ 54,000",
+        price: "₹ 2,70,000",
+        oldPrice: "₹ 2,70,000",
         discount: "Get 10% off",
         effective: "Effective price 4050/Month",
         gst: "+18% GST (₹ 8,748)",
@@ -685,7 +749,7 @@ const plans = {
       {
         name: "Tally Software Services - Silver",
         description: "Basic software services package",
-        price: "₹ 5,000",
+        price: "₹ 4,500",
         gst: "+18% GST (₹ 900)",
         buyNow: true,
         features: [
@@ -700,7 +764,7 @@ const plans = {
       {
         name: "Tally Software Services - Gold",
         description: "Comprehensive software services package",
-        price: "₹ 10,000",
+        price: "₹ 13,500",
         gst: "+18% GST (₹ 1,800)",
         buyNow: true,
         features: [
@@ -717,7 +781,7 @@ const plans = {
       {
         name: "Tally Software Services - Auditors Edition",
         description: "Specialized services for auditors",
-        price: "₹ 15,000",
+        price: "₹ 6,750",
         gst: "+18% GST (₹ 2,700)",
         buyNow: true,
         features: [
@@ -733,9 +797,9 @@ const plans = {
     ],
     "upgrades": [
       {
-        name: "Silver to Silver",
-        description: "Upgrade to latest Silver version",
-        price: "₹ 4,050",
+        name: "Pre Tally.ERP 9 Silver to TallyPrime Silver",
+        description: "Upgrade to TallyPrime Silver",
+        price: "₹ 9,000",
         gst: "+18% GST (₹ 729)",
         buyNow: true,
         features: [
@@ -747,9 +811,9 @@ const plans = {
         ]
       },
       {
-        name: "Gold to Gold",
-        description: "Upgrade to latest Gold version",
-        price: "₹ 12,150",
+        name: "Pre Tally.ERP 9 Gold to TallyPrime Gold",
+        description: "Upgrade to TallyPrime Gold",
+        price: "₹ 27,000",
         gst: "+18% GST (₹ 2,187)",
         buyNow: true,
         features: [
@@ -761,9 +825,9 @@ const plans = {
         ]
       },
       {
-        name: "Silver to Gold",
-        description: "Upgrade from Silver to Gold",
-        price: "₹ 16,200",
+        name: "Pre Tally.ERP 9 Silver to TallyPrime Gold",
+        description: "Upgrade to TallyPrime Gold",
+        price: "₹ 4,95,000",
         gst: "+18% GST (₹ 2,916)",
         buyNow: true,
         features: [
@@ -775,9 +839,9 @@ const plans = {
         ]
       },
       {
-        name: "Prime Silver to Prime Gold",
+        name: "TallyPrime Silver to TallyPrime Gold",
         description: "Upgrade from Prime Silver to Prime Gold",
-        price: "₹ 16,200",
+        price: "₹ 45,000",
         gst: "+18% GST (₹ 2,916)",
         buyNow: true,
         features: [
@@ -791,8 +855,8 @@ const plans = {
     ],
     "rental": [
       {
-        name: "Tally Prime Rental Silver",
-        description: "Monthly rental for single user",
+        name: "TallyPrime Silver",
+        description: "Monthly Rental",
         price: "₹ 750",
         gst: "+18% GST (₹ 135)",
         buyNow: true,
@@ -805,8 +869,8 @@ const plans = {
         ]
       },
       {
-        name: "Tally Prime Rental Gold",
-        description: "Monthly rental for multiple users",
+        name: "TallyPrime Gold",
+        description: "Monthly Rental",
         price: "₹ 2,250",
         gst: "+18% GST (₹ 405)",
         buyNow: true,
@@ -820,7 +884,7 @@ const plans = {
       },
       {
         name: "Shopper 9 Diamond",
-        description: "Special retail edition",
+        description: "Monthly Rental",
         price: "₹ 1,500",
         gst: "+18% GST (₹ 270)",
         buyNow: true,
@@ -835,9 +899,9 @@ const plans = {
     ],
     "virtual-user": [
       {
-        name: "TVU",
+        name: "Tally Virtual User",
         description: "Virtual user solution for remote access",
-        price: "₹ 1,500",
+        price: "₹ 1,200",
         gst: "+18% GST (₹ 270)",
         buyNow: true,
         features: [
@@ -1046,6 +1110,9 @@ const Pricing = ({ title, description, productName }: PricingProductProps) => {
   const [zohoPlanGroup, setZohoPlanGroup] = useState<'starter' | 'beyond'>('starter');
   const [zohoBilling, setZohoBilling] = useState<'yearly' | 'monthly'>('yearly');
   const [selectedTallyService, setSelectedTallyService] = useState<string>("new-products");
+  const [selectedBusyCategory, setSelectedBusyCategory] = useState<string>("desktop");
+  const [busyOnlineType, setBusyOnlineType] = useState<'access' | 'sql'>('access');
+  const [busyOnlineBilling, setBusyOnlineBilling] = useState<'annually' | 'quarterly'>('annually');
 
   let currentPlans: any[] = [];
   if (productName === 'zoho') {
@@ -1053,7 +1120,30 @@ const Pricing = ({ title, description, productName }: PricingProductProps) => {
   } else if (productName === 'tally') {
     currentPlans = (plans.tally as { [key: string]: any[] })[selectedTallyService] || [];
   } else if (productName === 'busy') {
-    currentPlans = (plans.busy as any)[busyTab][busyUserType] || [];
+    const busyPlans = (plans.busy as any)[selectedBusyCategory || 'desktop'];
+    if (selectedBusyCategory === 'desktop') {
+      // For desktop, we need to handle the nested structure
+      if (busyPlans && busyPlans[busyTab] && busyPlans[busyTab][busyUserType]) {
+        currentPlans = busyPlans[busyTab][busyUserType];
+      }
+    } else if (selectedBusyCategory === 'online') {
+      // For online, use the new structure
+      const onlinePlan = busyPlans[busyOnlineType][busyOnlineBilling];
+      currentPlans = [
+        {
+          name: `Online (${busyOnlineType === 'access' ? 'Access' : 'SQL'})`,
+          price: onlinePlan.price + (busyOnlineBilling === 'annually' ? '/Yearly' : '/Quarterly'),
+          buttonText: onlinePlan.buttonText,
+          features: [
+            `₹${onlinePlan.additionalCompany}/- For Additional Company`,
+            '*GST to be added to the price'
+          ]
+        }
+      ];
+    } else {
+      // For other categories, it's a direct array
+      currentPlans = Array.isArray(busyPlans) ? busyPlans : [];
+    }
   } else if (productName === 'ms-azure') {
     return (
       <section className="py-16 bg-gray-50">
@@ -1076,10 +1166,17 @@ const Pricing = ({ title, description, productName }: PricingProductProps) => {
           >
             {description}
           </motion.p>
-          <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
-            <Suspense fallback={<div>Loading Azure Calculator...</div>}>
-              <AzureCalculator hideHeaderFooter />
-            </Suspense>
+          <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center justify-center gap-6">
+            <p className="text-lg text-gray-700 text-center">
+              Calculate your estimation with Azure Pricing Calculator
+            </p>
+            <Button
+              onClick={handleAzureCalculator}
+              className="bg-red-600 hover:bg-red-400 text-white px-8 py-3 rounded-lg flex items-center gap-2"
+            >
+              <Cloud className="h-5 w-5" />
+              Open Azure Pricing Calculator
+            </Button>
           </div>
         </div>
       </section>
@@ -1090,59 +1187,147 @@ const Pricing = ({ title, description, productName }: PricingProductProps) => {
   }
 
   // Before rendering currentPlans, ensure only one plan has mostPopular: true
-  if (currentPlans.length > 0 && !currentPlans.some(p => p.mostPopular)) {
-    if (currentPlans.length > 1) {
-      currentPlans[1].mostPopular = true;
-    } else {
-      currentPlans[0].mostPopular = true;
-    }
-  } else if (currentPlans.filter(p => p.mostPopular).length > 1) {
-    // If more than one, keep only the first
-    let found = false;
-    currentPlans.forEach(p => {
-      if (p.mostPopular) {
-        if (!found) found = true;
-        else p.mostPopular = false;
+  if (Array.isArray(currentPlans) && currentPlans.length > 0) {
+    if (!currentPlans.some(p => p.mostPopular)) {
+      if (currentPlans.length > 1) {
+        currentPlans[1].mostPopular = true;
+      } else {
+        currentPlans[0].mostPopular = true;
       }
-    });
+    } else if (currentPlans.filter(p => p.mostPopular).length > 1) {
+      // If more than one, keep only the first
+      let found = false;
+      currentPlans.forEach(p => {
+        if (p.mostPopular) {
+          if (!found) found = true;
+          else p.mostPopular = false;
+        }
+      });
+    }
   }
 
   return (
     <section id="pricing-section" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        {/* Busy Tabs and Toggle */}
+        {/* Busy Category Selection */}
         {productName === "busy" && (
-          <div className="flex flex-col items-center mb-8 gap-4">
-            <div className="flex gap-2">
-              {busyTabs.map(tab => (
+          <div className="flex flex-col items-center gap-4 mb-8">
+            {/* Category Selection */}
+            <div className="flex justify-center gap-2">
+              {[{key: 'desktop', label: 'Desktop'}, {key: 'mobile', label: 'Mobile'}, {key: 'online', label: 'Online'}, {key: 'recom', label: 'Recom'}].map(cat => (
                 <button
-                  key={tab.key}
-                  onClick={() => setBusyTab(tab.key)}
+                  key={cat.key}
+                  onClick={() => setSelectedBusyCategory(cat.key)}
                   className={`px-4 py-2 rounded-full font-semibold transition ${
-                    busyTab === tab.key
+                    selectedBusyCategory === cat.key
                       ? "bg-primary text-white"
                       : "bg-white text-primary border border-primary"
                   }`}
                 >
-                  {tab.label}
+                  {cat.label}
                 </button>
               ))}
             </div>
-            <div className="flex items-center gap-4">
-              <span className={`font-semibold transition-colors duration-300 ${busyUserType === "single" ? "text-red-600" : "text-gray-500"}`}>Single User</span>
-              <button
-                type="button"
-                className={`relative inline-flex h-8 w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
-                onClick={() => setBusyUserType(busyUserType === "single" ? "multi" : "single")}
-                aria-pressed={busyUserType === "multi"}
-              >
-                <span
-                  className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300
-                    ${busyUserType === "multi" ? "translate-x-8" : "translate-x-0"}`}
-                />
-              </button>
-              <span className={`font-semibold transition-colors duration-300 ${busyUserType === "multi" ? "text-red-600" : "text-gray-500"}`}>Multi-User</span>
-            </div>
+
+            {/* Desktop Mode Selection */}
+            {selectedBusyCategory === 'desktop' && (
+              <>
+                {/* Perpetual/Subscription Toggle */}
+                <div className="flex justify-center gap-2">
+                  {busyTabs.map(tab => (
+                    <button
+                      key={tab.key}
+                      onClick={() => setBusyTab(tab.key)}
+                      className={`px-4 py-2 rounded-full font-semibold transition ${
+                        busyTab === tab.key
+                          ? "bg-primary text-white"
+                          : "bg-white text-primary border border-primary"
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Single/Multi User Toggle Switch */}
+                <div className="flex items-center gap-4">
+                  <span
+                    className={`text-sm font-semibold transition-colors duration-300 ${
+                      busyUserType === 'single' ? 'text-red-600' : 'text-gray-500'
+                    }`}
+                  >
+                    Single User
+                  </span>
+                  <button
+                    className={`relative inline-flex h-6 w-12 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
+                    onClick={() => setBusyUserType(busyUserType === 'single' ? 'multi' : 'single')}
+                    aria-pressed={busyUserType === 'multi'}
+                  >
+                    <span
+                      className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                        busyUserType === 'multi' ? 'translate-x-6' : 'translate-x-0'
+                      }`}
+                    />
+                  </button>
+                  <span
+                    className={`text-sm font-semibold transition-colors duration-300 ${
+                      busyUserType === 'multi' ? 'text-red-600' : 'text-gray-500'
+                    }`}
+                  >
+                    Multi User
+                  </span>
+                </div>
+              </>
+            )}
+            {/* Online Mode Selection */}
+            {selectedBusyCategory === 'online' && (
+              <>
+                {/* Access/SQL Toggle */}
+                <div className="flex justify-center gap-2">
+                  {['access', 'sql'].map(type => (
+                    <button
+                      key={type}
+                      onClick={() => setBusyOnlineType(type as 'access' | 'sql')}
+                      className={`px-4 py-2 rounded-full font-semibold transition ${
+                        busyOnlineType === type
+                          ? "bg-primary text-white"
+                          : "bg-white text-primary border border-primary"
+                      }`}
+                    >
+                      {type === 'access' ? 'Access' : 'SQL'}
+                    </button>
+                  ))}
+                </div>
+                {/* Annually/Quarterly Toggle */}
+                <div className="flex items-center gap-4 mt-2">
+                  <span
+                    className={`text-sm font-semibold transition-colors duration-300 ${
+                      busyOnlineBilling === 'annually' ? 'text-red-600' : 'text-gray-500'
+                    }`}
+                  >
+                    Annually
+                  </span>
+                  <button
+                    className={`relative inline-flex h-6 w-12 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
+                    onClick={() => setBusyOnlineBilling(busyOnlineBilling === 'annually' ? 'quarterly' : 'annually')}
+                    aria-pressed={busyOnlineBilling === 'quarterly'}
+                  >
+                    <span
+                      className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                        busyOnlineBilling === 'quarterly' ? 'translate-x-6' : 'translate-x-0'
+                      }`}
+                    />
+                  </button>
+                  <span
+                    className={`text-sm font-semibold transition-colors duration-300 ${
+                      busyOnlineBilling === 'quarterly' ? 'text-red-600' : 'text-gray-500'
+                    }`}
+                  >
+                    Quarterly
+                  </span>
+                </div>
+              </>
+            )}
           </div>
         )}
         

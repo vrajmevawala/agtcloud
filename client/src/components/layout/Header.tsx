@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/ui/language-selector";
 import { Logo } from "@/components/ui/logo";
 import { MegaMenu } from "@/components/ui/mega-menu";
-import { Menu, X, ChevronDown, Mail, Phone } from "lucide-react";
-import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { Menu, X, ChevronDown, Mail, Phone, Globe, ExternalLink, ShoppingCart } from "lucide-react";
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -18,6 +18,7 @@ const Header = () => {
   const [currentUser, setCurrentUser] = useState<any>(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const [showAltNumber, setShowAltNumber] = useState(false);
+  const [showAltSite, setShowAltSite] = useState(false);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +47,8 @@ const Header = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowAltNumber((prev) => !prev);
-    }, 2000); // Change every 1.2 seconds
+      setShowAltSite((prev) => !prev);
+    }, 2000); // Change every 2 seconds
     return () => clearInterval(interval);
   }, []);
   
@@ -94,6 +96,9 @@ const Header = () => {
               <a href="https://twitter.com/agtplin" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all duration-300">
                 <FaXTwitter size={14} />
               </a>
+              <a href="https://www.youtube.com/@agtplin" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all duration-300">
+                <FaYoutube size={16} />
+              </a>
             </div>
           </div>
         </div>
@@ -136,8 +141,41 @@ const Header = () => {
           </div>
           
           <div className="hidden lg:flex items-center space-x-4">
-        
-
+            {/* AGT Global or AGT Shop Website - fixed size, animated text */}
+            <div className="w-64 h-12 flex-shrink-0 flex justify-end items-center">
+              <motion.a
+                href={showAltSite ? "https://www.agtshop.in/" : "https://agtglobal.in"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center w-64 h-12 px-4 py-0 bg-gradient-to-r from-primary via-red-500 to-primary rounded-full shadow-md hover:shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                style={{ minWidth: '16rem', minHeight: '3rem' }}
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              >
+                {showAltSite ? (
+                  <ShoppingCart className="h-5 w-5 mr-2 text-white flex-shrink-0" />
+                ) : (
+                  <Globe className="h-5 w-5 mr-2 text-white flex-shrink-0" />
+                )}
+                <div className="relative w-[180px] h-6 overflow-hidden flex items-center">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={showAltSite ? 'shop' : 'global'}
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -20, opacity: 0 }}
+                      transition={{ duration: 0.40 }}
+                      className="block text-white text-sm font-semibold whitespace-nowrap"
+                      style={{ lineHeight: '1.5rem' }}
+                    >
+                      {showAltSite ? 'Visit Our Shop Website' : 'Visit Corporate Website'}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
+                <ExternalLink className="h-4 w-4 ml-2 text-white/80 flex-shrink-0" />
+              </motion.a> 
+            </div>
           </div>
 
           

@@ -8,6 +8,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import CallToAction from "@/components/sections/CallToAction";
 import { Helmet } from "react-helmet";
 import { productCategories } from '@/lib/constants';
+import { useEffect } from "react";
 
 interface ProductDetailProps {
   slug?: string;
@@ -21,6 +22,16 @@ const ProductDetail = ({ slug: propSlug }: ProductDetailProps) => {
     queryKey: [`/api/products/${slug}`],
     staleTime: Infinity,
   });
+  
+  // Add effect for smooth scrolling
+  useEffect(() => {
+    if (window.location.hash === '#pricing-section') {
+      const element = document.getElementById('pricing-section');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
   
   const defaultProduct = {
     name: "Product",

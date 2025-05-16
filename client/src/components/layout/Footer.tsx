@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Logo } from "@/components/ui/logo";
-import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaGooglePlay, FaApple, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -42,6 +42,20 @@ const Footer = () => {
               </a>
               <a href="https://twitter.com/agtplin" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="text-gray-400 hover:text-white hover:bg-primary/30 transition-colors duration-300 cursor-pointer h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 hover:border-primary">
                 <FaXTwitter size={18} />
+              </a>
+              <a href="https://www.youtube.com/@agtplin" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-gray-400 hover:text-white hover:bg-primary/30 transition-colors duration-300 cursor-pointer h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 hover:border-primary">
+                <FaYoutube size={20} />
+              </a>
+            </div>
+            {/* App Links */}
+            <div className="flex space-x-4 mt-6">
+              <a href="https://play.google.com/store/apps/details?id=com.yourcompany.app" target="_blank" rel="noopener noreferrer" aria-label="Google Play Store" className="bg-gray-800 hover:bg-primary/80 transition-colors duration-300 cursor-pointer h-10 w-32 flex items-center justify-center rounded-lg border border-gray-700 hover:border-primary">
+                <FaGooglePlay className="h-6 w-6 mr-2" />
+                <span className="text-xs text-white font-semibold">Google Play</span>
+              </a>
+              <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank" rel="noopener noreferrer" aria-label="Apple App Store" className="bg-gray-800 hover:bg-primary/80 transition-colors duration-300 cursor-pointer h-10 w-32 flex items-center justify-center rounded-lg border border-gray-700 hover:border-primary">
+                <FaApple className="h-6 w-6 mr-2" />
+                <span className="text-xs text-white font-semibold">App Store</span>
               </a>
             </div>
           </div>

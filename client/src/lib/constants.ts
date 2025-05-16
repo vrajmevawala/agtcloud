@@ -3,10 +3,12 @@ export const productCategories = [
     name: "Tally Solutions",
     slug: "tally",
     services: [
-      { name: "Tally Prime", slug: "prime", description: "Next-generation business management software" },
-      { name: "Tally Server", slug: "server", description: "Multi-user, networked installation for teams" },
-      { name: "Tally Developer", slug: "developer", description: "Customization tools for developers" },
-      { name: "Customization", slug: "customization", description: "Tailored solutions for specific business needs" }
+      { name: "Tally on AWS", slug: "aws", description: "Run TallyPrime on Amazon Web Services" },
+      { name: "New Products", slug: "new-products", description: "Latest Tally products and solutions" },
+      { name: "Renewable", slug: "software-services", description: "Professional software services" },
+      { name: "Upgrades", slug: "upgrades", description: "Upgrade your existing Tally installation" },
+      { name: "Tally Rental", slug: "rental", description: "Flexible rental options for Tally software" },
+      { name: "Tally Virtual User", slug: "virtual-user", description: "Virtual user solutions for remote access" }
     ]
   },
   {

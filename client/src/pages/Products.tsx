@@ -132,7 +132,7 @@ export default function Products() {
                   </div>
                   
                   <div className="flex flex-wrap gap-4">
-                    <Link href={`/product/${category.slug}`}>
+                    <Link href={`/product/${category.slug}#pricing-section`}>
                       <Button className="bg-primary hover:bg-primary/90">
                         Learn More
                       </Button>

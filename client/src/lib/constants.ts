@@ -1,0 +1,71 @@
+export const productCategories = [
+  {
+    name: "Tally Solutions",
+    slug: "tally",
+    services: [
+      { name: "Tally Prime", slug: "prime", description: "Next-generation business management software" },
+      { name: "Tally Server", slug: "server", description: "Multi-user, networked installation for teams" },
+      { name: "Tally Developer", slug: "developer", description: "Customization tools for developers" },
+      { name: "Customization", slug: "customization", description: "Tailored solutions for specific business needs" }
+    ]
+  },
+  {
+    name: "MS Azure",
+    slug: "ms-azure",
+    services: [
+      { name: "Cloud Services", slug: "cloud-services", description: "Full-service cloud computing platform" },
+      { name: "Virtual Machines", slug: "virtual-machines", description: "Scalable computing resources on demand" },
+      { name: "Database Management", slug: "database", description: "Managed database services for all needs" },
+      { name: "DevOps", slug: "devops", description: "Tools for development and operations integration" }
+    ]
+  },
+  {
+    name: "Busy Solutions",
+    slug: "busy",
+    services: [
+      { name: "Accounting", slug: "accounting", description: "Complete financial management with GST-ready reporting" },
+      { name: "Inventory Management", slug: "inventory", description: "Real-time stock tracking and management" },
+      { name: "GST Compliance", slug: "gst", description: "Simplified GST compliance and filing" },
+      { name: "Payroll", slug: "payroll", description: "Automated salary processing and tax calculations" }
+    ]
+  },
+  {
+    name: "Zoho",
+    slug: "zoho",
+    services: [
+      { name: "CRM", slug: "crm", description: "Complete customer relationship management" },
+      { name: "Books", slug: "books", description: "Online accounting made simple" },
+      { name: "Campaigns", slug: "campaigns", description: "Powerful marketing campaign tools" },
+      { name: "Mail", slug: "mail", description: "Professional email hosting for business" }
+    ]
+  }
+];
+
+export const stockImages = {
+  cloudComputing: [
+    "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1607743386760-88f10eb63d39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720"
+  ],
+  businessSoftware: [
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720"
+  ],
+  enterpriseTech: [
+    "https://images.unsplash.com/photo-1563770660941-10a2b36e98e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1494961104809-11f1c6a38baa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720"
+  ],
+  workspaceTech: [
+    "https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1547394765-185e1e68f34e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1519155031214-e8d583928bf2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720",
+    "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&h=720"
+  ]
+};

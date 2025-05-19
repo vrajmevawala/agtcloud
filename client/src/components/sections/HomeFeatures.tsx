@@ -4,32 +4,32 @@ import { CloudCog, Server, Database, Shield, Globe, TrendingUp } from "lucide-re
 const homeFeatures = [
   {
     title: "Cloud Computing",
-    description: "Access your applications and data from anywhere with secure cloud infrastructure.",
+    description: "Access your applications and data from anywhere with secure, scalable cloud infrastructure — ideal for remote work and hybrid environments.",
     icon: <CloudCog className="h-8 w-8 text-red-400" />
   },
   {
     title: "Virtual Servers",
-    description: "Deploy scalable virtual machines optimized for your specific workloads.",
+    description: "Deploy high-performance virtual machines tailored to your business needs. Enjoy cost-efficient cloud hosting with seamless scalability.",
     icon: <Server className="h-8 w-8 text-red-400" />
   },
   {
     title: "Database Management",
-    description: "Reliable, secure and scalable database solutions for your business data.",
+    description: "Get reliable and secure database solutions with automated backups, performance tuning, and enterprise-grade data management.",
     icon: <Database className="h-8 w-8 text-red-400" />
   },
   {
     title: "Security Solutions",
-    description: "Advanced security features to protect your data and applications from threats.",
+    description: "Protect your cloud environment with advanced cybersecurity, data encryption, and real-time threat detection.",
     icon: <Shield className="h-8 w-8 text-red-400" />
   },
   {
     title: "Global Availability",
-    description: "Deploy your applications globally with high availability and low latency.",
+    description: "Ensure high availability and low-latency access with globally distributed data centers for seamless user experience anywhere in the world.",
     icon: <Globe className="h-8 w-8 text-red-400" />
   },
   {
     title: "Performance Analytics",
-    description: "Detailed insights into your application performance and resource utilization.",
+    description: "Unlock real-time performance monitoring, resource optimization, and actionable cloud analytics for better decision-making.",
     icon: <TrendingUp className="h-8 w-8 text-red-400" />
   }
 ];

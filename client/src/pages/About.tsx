@@ -43,7 +43,7 @@ export default function About() {
         <div className="flex flex-row items-center gap-20 justify-center mb-24">
         <div className="relative z-10 flex flex-col items-center">
             <p className="text-gray-700 max-w-2xl text-center text-s">
-              AGT committed to bringing our clients the most cutting-edge information & ideas. AGT is the industry leaders in hitting the mark with our sizzling tips & professional guidance before & after Customer's investment, Customer will be one
+            AGT is committed to bringing our clients the most cutting-edge information and ideas. As industry leaders, we consistently hit the mark with our expert tips and professional guidance. Before and after your investment, you will be one step ahead with AGT — empowered by secure, scalable, and innovative cloud solutions designed to grow your business.
             </p>
         </div>
         </div>
@@ -56,7 +56,9 @@ export default function About() {
           >
             <h2 className="text-3xl text-decoration-line: underline decoration-red-500 font-bold mb-6">Our Story</h2>
             <p className="text-gray-600 mb-4">
-              Founded in 2019, AGT began as a small team with a big vision - to help businesses leverage technology for growth and efficiency. What started as a local IT services company has evolved into a comprehensive cloud solutions provider serving clients across the globe.
+            Founded in 2019, AGT began as a small IT team with a bold vision: to help businesses grow through cloud technology. From a local IT service provider, we've evolved into a global cloud solutions company trusted by organizations of all sizes.
+
+            Driven by innovation and a commitment to excellence, we’ve partnered with industry leaders like Tally, Microsoft, Zoho, and Busy to deliver secure, scalable, and flexible cloud hosting. Our flagship product, AGT Cloud, continues to power digital transformation for thousands of businesses worldwide.
             </p>
             <p className="text-gray-600 mb-4">
               Our journey has been defined by our commitment to innovation, quality, and customer success. As cloud technologies evolved, we positioned ourselves at the forefront of this revolution, partnering with industry leaders like  Tally, Microsoft, Zoho, and Busy to bring the best solutions to our clients.
@@ -84,7 +86,8 @@ export default function About() {
           <div className="text-center mb-16">
             <h2 className="text-3xl text-decoration-line: underline decoration-red-500 font-bold mb-4">Our Values</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              These core principles guide everything we do at AGT
+            At AGT, our values aren’t just words — they are the foundation of every decision, interaction, and service we deliver. These core principles guide our mission to be a trusted, customer-centric cloud service provider.
+
             </p>
           </div>
           
@@ -100,7 +103,7 @@ export default function About() {
               </div>
               <h3 className="font-bold text-xl mb-4">Customer First</h3>
               <p className="text-gray-600">
-                We prioritize our customers' success and build lasting relationships based on trust and mutual growth.
+              We put clients at the center, building lasting relationships based on trust, reliability, and shared success.
               </p>
             </motion.div>
             
@@ -115,7 +118,7 @@ export default function About() {
               </div>
               <h3 className="font-bold text-xl mb-4">Excellence</h3>
               <p className="text-gray-600">
-                We strive for excellence in everything we do, from the solutions we provide to the support we deliver.
+              We deliver high-quality cloud solutions with top-tier support, ensuring performance from setup to scale.
               </p>
             </motion.div>
             
@@ -130,7 +133,7 @@ export default function About() {
               </div>
               <h3 className="font-bold text-xl mb-4">Innovation</h3>
               <p className="text-gray-600">
-                We embrace change and continuously innovate to bring the latest technologies and solutions to our clients.
+              We embrace change and lead with the latest cloud technologies to keep your business ahead.
               </p>
             </motion.div>
             
@@ -146,7 +149,7 @@ export default function About() {
               </div>
               <h3 className="font-bold text-xl mb-4">Integrity</h3>
               <p className="text-gray-600">
-                We conduct business with honesty, transparency, and the highest ethical standards.
+              We uphold honesty, transparency, and ethics in every step, earning trust as your reliable cloud service partner.
               </p>
             </motion.div>
           </div>

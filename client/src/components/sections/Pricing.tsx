@@ -15,6 +15,8 @@ interface PricingProductProps {
   setSelectedTallyService?: (slug: string) => void;
   selectedBusyCategory?: string;
   setSelectedBusyCategory?: (slug: string) => void;
+  selectedZohoProduct?: string;
+  setSelectedZohoProduct?: (slug: string) => void;
 }
 
 const durationTabs = [
@@ -1388,24 +1390,26 @@ const zohoProducts = [
   { key: 'books', label: 'Zoho Books' },
   { key: 'crm', label: 'Zoho CRM' },
   { key: 'mail', label: 'Zoho Mail' },
-  { key: 'one', label: 'Zoho One' },
+  { key: 'zohoone', label: 'Zoho One' },
 ];
 
-const Pricing = ({ title, description, productName, selectedTallyService: controlledTallyService, setSelectedTallyService: setControlledTallyService, selectedBusyCategory: controlledBusyCategory, setSelectedBusyCategory: setControlledBusyCategory }: PricingProductProps) => {
+const Pricing = ({ title, description, productName, selectedTallyService: controlledTallyService, setSelectedTallyService: setControlledTallyService, selectedBusyCategory: controlledBusyCategory, setSelectedBusyCategory: setControlledBusyCategory, selectedZohoProduct: controlledZohoProduct, setSelectedZohoProduct: setControlledZohoProduct }: PricingProductProps) => {
   const [selectedDuration, setSelectedDuration] = useState<TallyDuration>("1_month");
   const [busyTab, setBusyTab] = useState<BusyTab>("perpetual");
   const [busyUserType, setBusyUserType] = useState<BusyUserType>("single");
   const [zohoPlanGroup, setZohoPlanGroup] = useState<'starter' | 'beyond'>("starter");
   const [zohoBilling, setZohoBilling] = useState<'yearly' | 'monthly'>("yearly");
+  const [crmBilling, setCrmBilling] = useState<'yearly' | 'monthly'>("yearly");
+  const [oneBilling, setOneBilling] = useState<'yearly' | 'monthly'>("yearly");
   const [internalTallyService, setInternalTallyService] = useState<string>("new-products");
   const [internalBusyCategory, setInternalBusyCategory] = useState<string>("desktop");
   const [busyOnlineType, setBusyOnlineType] = useState<'access' | 'sql'>("access");
   const [busyOnlineBilling, setBusyOnlineBilling] = useState<'annually' | 'quarterly'>("annually");
 
-  // New: Zoho product tab state
-  const [selectedZohoProduct, setSelectedZohoProduct] = useState<'books' | 'crm' | 'one' | 'mail'>('books');
-  const [crmBilling, setCrmBilling] = useState<'yearly' | 'monthly'>('yearly');
-  const [oneBilling, setOneBilling] = useState<'yearly' | 'monthly'>('yearly');
+  // New: Zoho product tab state (controlled or internal)
+  const [internalZohoProduct, setInternalZohoProduct] = useState<'books' | 'crm' | 'zohoone' | 'mail'>("books");
+  const selectedZohoProduct = controlledZohoProduct !== undefined ? controlledZohoProduct : internalZohoProduct;
+  const setSelectedZohoProduct = setControlledZohoProduct !== undefined ? setControlledZohoProduct : setInternalZohoProduct;
 
   // Use controlled or internal state
   const selectedTallyService = controlledTallyService !== undefined ? controlledTallyService : internalTallyService;
@@ -1424,7 +1428,7 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
       currentPlans = zohoPricing[zohoPlanGroup][zohoBilling];
     } else if (selectedZohoProduct === 'crm') {
       currentPlans = zohoCrmPricing[crmBilling];
-    } else if (selectedZohoProduct === 'one') {
+    } else if (selectedZohoProduct === 'zohoone') {
       currentPlans = zohoOnePricing[oneBilling];
     } else if (selectedZohoProduct === 'mail') {
       currentPlans = zohoMailPricing['yearly'];
@@ -1609,13 +1613,13 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                     Monthly
                   </span>
                   <button
-                    className={`relative inline-flex h-6 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
+                    className="relative inline-flex h-8 w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
                     onClick={() => setZohoBilling(zohoBilling === 'yearly' ? 'monthly' : 'yearly')}
                     aria-pressed={zohoBilling === 'monthly'}
                   >
                     <span
-                      className={`absolute top-0.5 left-0.5 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
-                        zohoBilling === 'yearly' ? 'translate-x-6 sm:translate-x-8' : 'translate-x-0'
+                      className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                        zohoBilling === 'yearly' ? 'translate-x-8' : 'translate-x-0'
                       }`}
                     />
                   </button>
@@ -1640,13 +1644,13 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                   Monthly
                 </span>
                 <button
-                  className={`relative inline-flex h-6 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
+                  className="relative inline-flex h-8 w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
                   onClick={() => setCrmBilling(crmBilling === 'yearly' ? 'monthly' : 'yearly')}
                   aria-pressed={crmBilling === 'monthly'}
                 >
                   <span
-                    className={`absolute top-0.5 left-0.5 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
-                      crmBilling === 'yearly' ? 'translate-x-6 sm:translate-x-8' : 'translate-x-0'
+                    className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                      crmBilling === 'yearly' ? 'translate-x-8' : 'translate-x-0'
                     }`}
                   />
                 </button>
@@ -1660,7 +1664,7 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
               </div>
             )}
             {/* One: Billing Toggle */}
-            {selectedZohoProduct === 'one' && (
+            {selectedZohoProduct === 'zohoone' && (
               <div className="flex items-center gap-2 sm:gap-4 mb-4">
                 <span
                   className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
@@ -1670,13 +1674,13 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                   Monthly
                 </span>
                 <button
-                  className={`relative inline-flex h-6 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
+                  className="relative inline-flex h-8 w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
                   onClick={() => setOneBilling(oneBilling === 'yearly' ? 'monthly' : 'yearly')}
                   aria-pressed={oneBilling === 'monthly'}
                 >
                   <span
-                    className={`absolute top-0.5 left-0.5 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
-                      oneBilling === 'yearly' ? 'translate-x-6 sm:translate-x-8' : 'translate-x-0'
+                    className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                      oneBilling === 'yearly' ? 'translate-x-8' : 'translate-x-0'
                     }`}
                   />
                 </button>
@@ -1742,13 +1746,13 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                     Single User
                   </span>
                   <button
-                    className={`relative inline-flex h-6 w-12 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
+                    className="relative inline-flex h-8 w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
                     onClick={() => setBusyUserType(busyUserType === 'single' ? 'multi' : 'single')}
                     aria-pressed={busyUserType === 'multi'}
                   >
                     <span
-                      className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
-                        busyUserType === 'multi' ? 'translate-x-6' : 'translate-x-0'
+                      className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                        busyUserType === 'multi' ? 'translate-x-8' : 'translate-x-0'
                       }`}
                     />
                   </button>
@@ -1791,13 +1795,13 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                     Annually
                   </span>
                   <button
-                    className={`relative inline-flex h-6 w-12 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
+                    className="relative inline-flex h-8 w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
                     onClick={() => setBusyOnlineBilling(busyOnlineBilling === 'annually' ? 'quarterly' : 'annually')}
                     aria-pressed={busyOnlineBilling === 'quarterly'}
                   >
                     <span
-                      className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
-                        busyOnlineBilling === 'quarterly' ? 'translate-x-6' : 'translate-x-0'
+                      className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                        busyOnlineBilling === 'quarterly' ? 'translate-x-8' : 'translate-x-0'
                       }`}
                     />
                   </button>

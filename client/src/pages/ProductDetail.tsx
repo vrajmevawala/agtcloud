@@ -90,11 +90,14 @@ const productName = slug || "default";
   // Add state for selected service/category
   const [selectedTallyService, setSelectedTallyService] = useState("new-products");
   const [selectedBusyCategory, setSelectedBusyCategory] = useState("desktop");
+  // Add Zoho product tab state
+  const [selectedZohoProduct, setSelectedZohoProduct] = useState('books');
 
   // Handler to be passed to Features
   const handleServiceSelect = (slug: string) => {
     if (companyData?.slug === "tally") setSelectedTallyService(slug);
     if (companyData?.slug === "busy") setSelectedBusyCategory(slug);
+    if (companyData?.slug === "zoho") setSelectedZohoProduct(slug);
     // Scroll to pricing section
     const el = document.getElementById("pricing-section");
     if (el) {
@@ -160,6 +163,8 @@ const productName = slug || "default";
         setSelectedTallyService={setSelectedTallyService}
         selectedBusyCategory={selectedBusyCategory}
         setSelectedBusyCategory={setSelectedBusyCategory}
+        selectedZohoProduct={selectedZohoProduct}
+        setSelectedZohoProduct={setSelectedZohoProduct}
       />
       <Testimonials />
       <CallToAction

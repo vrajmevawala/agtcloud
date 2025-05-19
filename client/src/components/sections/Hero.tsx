@@ -111,7 +111,7 @@ const Hero = ({
   };
 
   return (
-    <section className="text-black pt-36 pb-16 md:pt-40 md:pb-24 overflow-hidden relative">
+    <section className="text-black pt-36 pb-16 md:pt-40 md:pb-24 h-screen overflow-hidden relative">
       <video
         autoPlay
         loop
@@ -246,6 +246,18 @@ const Hero = ({
       </div>
 
       <ScheduleDemoModal open={showDemoModal} onClose={() => setShowDemoModal(false)} title="Schedule a Demo" />
+      <div
+      style={{
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        width: "100%",
+        height: "100px",
+        background: "linear-gradient(to top, white, rgba(255,255,255,0))",
+        zIndex: 5,
+        pointerEvents: "none",
+      }}
+    />
     </section>
   );
 };

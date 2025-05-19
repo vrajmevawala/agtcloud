@@ -70,7 +70,7 @@ const Header = () => {
               <span className="hidden sm:inline">info@agtglobal.in</span>
             </a>
             <a
-              href={showAltNumber ? "tel:+919558803148" : "tel:0261-3117799"}
+              href="tel:+919558803148"
               className="text-sm text-gray-600 hover:text-primary transition duration-300 flex items-center"
             >
               <Phone className="h-4 w-4 mr-2 text-primary animate-stirr" />

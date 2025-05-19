@@ -5,8 +5,24 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { pageVariants } from '@/lib/animations';
+import React, { useState } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Contact() {
+  // Add state for form fields
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  // Handler to send WhatsApp message
+  const handleSendWhatsApp = () => {
+    const text = `Contact Form Submission:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ASubject: ${subject}%0AMessage: ${message}`;
+    const url = `https://wa.me/919558803148?text=${encodeURIComponent(`Contact Form Submission:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\nMessage: ${message}`)}`;
+    window.open(url, '_blank');
+  };
+
   return (
     <motion.div
       variants={pageVariants}
@@ -43,16 +59,21 @@ export default function Contact() {
 
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardContent className="p-8 flex flex-col items-center text-center">
-              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+
+              <a href="tel:+919558803148" className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 hover:bg-primary/20 transition-colors duration-300">
                 <Phone className="h-8 w-8 text-primary" />
-              </div>
+              </a>
               <h3 className="font-bold text-xl mb-4">Call Us</h3>
+              <a href="tel:+919558803148" className="text-gray-600">
               <p className="text-gray-600 mb-2">
                 Sales: +91-9558803148
               </p>
+              </a>
+              <a href="tel:0261-3117799" className="text-gray-600">  
               <p className="text-gray-600">
                 Support: 0261-3117799
               </p>
+              </a>
             </CardContent>
           </Card>
 
@@ -77,29 +98,29 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label className="block text-sm font-medium mb-2">Your Name</label>
-                  <Input className="w-full" />
+                  <Input className="w-full" value={name} onChange={e => setName(e.target.value)} />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Your Email</label>
-                  <Input type="email" className="w-full" />
+                  <Input type="email" className="w-full" value={email} onChange={e => setEmail(e.target.value)} />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Phone Number</label>
-                  <Input  className="w-full" />
+                  <Input  className="w-full" value={phone} onChange={e => setPhone(e.target.value)} />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Subject</label>
-                  <Input  className="w-full" />
+                  <Input  className="w-full" value={subject} onChange={e => setSubject(e.target.value)} />
                 </div>
               </div>
               
               <div className="mb-6">
                 <label className="block text-sm font-medium mb-2">Your Message</label>
-                <Textarea placeholder="How can we help you?" className="w-full min-h-[150px]" />
+                <Textarea placeholder="How can we help you?" className="w-full min-h-[150px]" value={message} onChange={e => setMessage(e.target.value)} />
               </div>
               <div className='flex justify-center'>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 flex items-center gap-2">
-                <Send className="h-5 w-5" /> Send Message
+              <Button size="lg" className="bg-primary hover:bg-primary/90 flex items-center gap-2" onClick={handleSendWhatsApp}>
+                Send Message<FaWhatsapp className="h-7 w-7" />
               </Button>
               </div>
               

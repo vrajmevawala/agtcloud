@@ -324,6 +324,282 @@ const zohoPricing = {
   }
 };
 
+// Add Zoho CRM Pricing
+const zohoCrmPricing = {
+  yearly: [
+    {
+      name: 'Standard',
+      price: '₹800',
+      priceDescription: '/user/month billed annually',
+      buttonText: 'Start Free Trial',
+      features: [
+        { name: 'Mass email', included: true },
+        { name: 'Custom modules', included: true },
+        { name: 'Workflows', included: true },
+        { name: 'Cadences', included: true },
+        { name: 'Sales forecasting', included: true },
+        { name: 'Lookup fields', included: true },
+        { name: 'Canvas', included: true },
+        { name: 'Office 365 integration', included: true },
+        { name: 'Zoho Marketplace', included: true },
+      ]
+    },
+    {
+      name: 'Professional',
+      price: '₹1,400',
+      priceDescription: '/user/month billed annually',
+      buttonText: 'Start Free Trial',
+      mostPopular: true,
+      features: [
+        { name: 'Everything in Standard +', bold: true },
+        { name: 'Blueprint', included: true },
+        { name: 'CPQ', included: true },
+        { name: 'SalesSignals', included: true },
+        { name: 'Inventory management', included: true },
+        { name: 'Webhooks', included: true },
+        { name: 'Assignment rules', included: true },
+        { name: 'Validation rules', included: true },
+        { name: 'Kiosk Studio', included: true },
+        { name: 'Google Ads integration', included: true },
+      ]
+    },
+    {
+      name: 'Enterprise',
+      price: '₹2,400',
+      priceDescription: '/user/month billed annually',
+      buttonText: 'Start Free Trial',
+      features: [
+        { name: 'Everything in Professional +', bold: true },
+        { name: 'Zia — AI assistant', included: true },
+        { name: 'Territory management', included: true },
+        { name: 'Custom functions', included: true },
+        { name: 'Journey orchestration', included: true },
+        { name: 'Multi-user portals', included: true },
+        { name: 'Page layouts', included: true },
+        { name: 'Client scripts', included: true },
+        { name: 'Approval process', included: true },
+        { name: 'Sandbox', included: true },
+      ]
+    },
+    {
+      name: 'Ultimate',
+      price: '₹2,600',
+      priceDescription: '/user/month billed annually',
+      buttonText: 'Start Free Trial',
+      features: [
+        { name: 'Everything in Enterprise +', bold: true },
+        { name: 'Enhanced feature limits', included: true },
+        { name: 'Extended AI capabilities', included: true },
+        { name: 'Advanced customization', included: true },
+        { name: 'Data preparation', included: true },
+        { name: 'Augmented analytics', included: true },
+        { name: 'Data storytelling', included: true },
+        { name: 'Unified business insights', included: true },
+        { name: 'Advanced administration', included: true },
+      ]
+    }
+  ],
+  monthly: [
+    {
+      name: 'Standard',
+      price: '₹1,300',
+      priceDescription: '/user/month billed monthly',
+      buttonText: 'Start Free Trial',
+      features: [
+        { name: 'Mass email', included: true },
+        { name: 'Custom modules', included: true },
+        { name: 'Workflows', included: true },
+        { name: 'Cadences', included: true },
+        { name: 'Sales forecasting', included: true },
+        { name: 'Lookup fields', included: true },
+        { name: 'Canvas', included: true },
+        { name: 'Office 365 integration', included: true },
+        { name: 'Zoho Marketplace', included: true },
+      ]
+    },
+    {
+      name: 'Professional',
+      price: '₹2,100',
+      priceDescription: '/user/month billed monthly',
+      buttonText: 'Start Free Trial',
+      mostPopular: true,
+      features: [
+        { name: 'Everything in Standard +', bold: true },
+        { name: 'Blueprint', included: true },
+        { name: 'CPQ', included: true },
+        { name: 'SalesSignals', included: true },
+        { name: 'Inventory management', included: true },
+        { name: 'Webhooks', included: true },
+        { name: 'Assignment rules', included: true },
+        { name: 'Validation rules', included: true },
+        { name: 'Kiosk Studio', included: true },
+        { name: 'Google Ads integration', included: true },
+      ]
+    },
+    {
+      name: 'Enterprise',
+      price: '₹3,000',
+      priceDescription: '/user/month billed monthly',
+      buttonText: 'Start Free Trial',
+      features: [
+        { name: 'Everything in Professional +', bold: true },
+        { name: 'Zia — AI assistant', included: true },
+        { name: 'Territory management', included: true },
+        { name: 'Custom functions', included: true },
+        { name: 'Journey orchestration', included: true },
+        { name: 'Multi-user portals', included: true },
+        { name: 'Page layouts', included: true },
+        { name: 'Client scripts', included: true },
+        { name: 'Approval process', included: true },
+        { name: 'Sandbox', included: true },
+      ]
+    },
+    {
+      name: 'Ultimate',
+      price: '₹3,200',
+      priceDescription: '/user/month billed monthly',
+      buttonText: 'Start Free Trial',
+      features: [
+        { name: 'Everything in Enterprise +', bold: true },
+        { name: 'Enhanced feature limits', included: true },
+        { name: 'Extended AI capabilities', included: true },
+        { name: 'Advanced customization', included: true },
+        { name: 'Data preparation', included: true },
+        { name: 'Augmented analytics', included: true },
+        { name: 'Data storytelling', included: true },
+        { name: 'Unified business insights', included: true },
+        { name: 'Advanced administration', included: true },
+      ]
+    }
+  ]
+};
+
+// Add Zoho One Pricing
+const zohoOnePricing = {
+  yearly: [
+    {
+      name: 'All Employee Pricing',
+      price: '₹1,250',
+      priceDescription: '/employee/month billed annually',
+      buttonText: 'Try Now',
+      features: [
+        { name: 'Must purchase license for ALL employees', included: true },
+      ]
+    },
+    {
+      name: 'Flexible User Pricing',
+      price: '₹3,500',
+      priceDescription: '/user/month billed annually',
+      buttonText: 'Try Now',
+      features: [
+        { name: 'Purchase license for any no. of users', included: true },
+      ]
+    }
+  ],
+  monthly: [
+    {
+      name: 'All Employee Pricing',
+      price: '₹2,500',
+      priceDescription: '/employee/month',
+      buttonText: 'Try Now',
+      features: [
+        { name: 'Must purchase license for ALL employees', included: true },
+      ]
+    },
+    {
+      name: 'Flexible User Pricing',
+      price: '₹4,000',
+      priceDescription: '/user/month',
+      buttonText: 'Try Now',
+      features: [
+        { name: 'Purchase license for any no. of users', included: true },
+      ]
+    }
+  ]
+};
+
+// Add Zoho Mail Pricing (Yearly only)
+const zohoMailPricing = {
+  yearly: [
+    {
+      name: 'Workplace Standard',
+      price: '₹99',
+      priceDescription: '/user/month billed annually',
+      buttonText: 'Sign Up',
+      features: [
+        { name: 'Enterprise-grade custom email', included: true },
+        { name: '30 GB mail storage per user', included: true },
+        { name: 'File storage starts at 100 GB/team', included: true },
+        { name: 'AI assistant (Zia)', included: true },
+        { name: 'Migration Assistance', included: true },
+        { name: 'Trident Desktop Experience', included: true },
+        { name: 'Mobile & Desktop Apps', included: true },
+        { name: 'Identity Management & MFA App', included: true },
+      ]
+    },
+    {
+      name: 'Mail Lite (5GB)',
+      price: '₹59',
+      priceDescription: '/user/month billed annually',
+      buttonText: 'Sign Up',
+      features: [
+        { name: 'Enterprise-grade custom email', included: true },
+        { name: '5 GB mail storage per user', included: true },
+        { name: 'AI assistant (Zia)', included: true },
+        { name: 'Migration Assistance', included: true },
+        { name: 'Trident Desktop Experience', included: true },
+        { name: 'Mobile & Desktop Apps', included: true },
+        { name: 'Identity Management & MFA App', included: true },
+      ]
+    },
+    {
+      name: 'Mail Premium',
+      price: '₹199',
+      priceDescription: '/user/month billed annually',
+      buttonText: 'Sign Up',
+      features: [
+        { name: 'Enterprise-grade custom email', included: true },
+        { name: '50 GB mail storage/user + 50 GB retention storage/user', included: true },
+        { name: 'AI assistant (Zia)', included: true },
+        { name: 'Migration Assistance', included: true },
+        { name: 'Trident Desktop Experience', included: true },
+        { name: 'Mobile & Desktop Apps', included: true },
+        { name: 'Identity Management & MFA App', included: true },
+      ]
+    },
+    {
+      name: 'Workplace Professional',
+      price: '₹399',
+      priceDescription: '/user/month billed annually',
+      buttonText: 'Sign Up',
+      features: [
+        { name: 'Enterprise-grade custom email', included: true },
+        { name: '100 GB mail storage/user + 100 GB retention storage/user', included: true },
+        { name: 'File storage 1TB/team', included: true },
+        { name: 'AI assistant (Zia)', included: true },
+        { name: 'Migration Assistance', included: true },
+        { name: 'Trident Desktop Experience', included: true },
+        { name: 'Mobile & Desktop Apps', included: true },
+        { name: 'Identity Management & MFA App', included: true },
+      ]
+    },
+    {
+      name: 'Workplace Enterprise',
+      price: 'Contact Sales',
+      priceDescription: '',
+      buttonText: 'Contact Us',
+      features: [
+        { name: 'Highest plans and custom limits of the included Workplace products', included: true },
+        { name: 'Identity management and Microsoft Active Directory cloud sync using Zoho Directory', included: true },
+        { name: 'Virtual Private Cloud for isolated hosting', included: true },
+        { name: 'Additional security and administration features via endpoint control', included: true },
+        { name: 'Custom Plans with other Zoho Products', included: true },
+        { name: 'Pooled Storage for Mail', included: true },
+      ]
+    }
+  ]
+};
+
 const handleAzureCalculator = () => {
   window.open('https://azure.microsoft.com/en-in/pricing/calculator/?ef_id=k_Cj0KCQjwxJvBBhDuARIsAGUgNfgGwGYCrvY_Hz2fz8J6JvXJgQjn3-BP09vP6lniV8VypWw3G6A96nEaAniLEALw_wcB_k&OCID=AIDcmmf1elj9v5_SEM_k_Cj0KCQjwxJvBBhDuARIsAGUgNfgGwGYCrvY_Hz2fz8J6JvXJgQjn3-BP09vP6lniV8VypWw3G6A96nEaAniLEALw_wcB_k&gad_source=1&gad_campaignid=1634424385&gbraid=0AAAAADcJh_tGlntVhs1tru7qE9QWmzcHf&gclid=Cj0KCQjwxJvBBhDuARIsAGUgNfgGwGYCrvY_Hz2fz8J6JvXJgQjn3-BP09vP6lniV8VypWw3G6A96nEaAniLEALw_wcB', '_blank');
 };
@@ -1108,16 +1384,28 @@ const featureIcon = (feature: string, idx: number) => {
   return <Check className="h-4 w-4 text-green-500" />;
 };
 
+const zohoProducts = [
+  { key: 'books', label: 'Zoho Books' },
+  { key: 'crm', label: 'Zoho CRM' },
+  { key: 'mail', label: 'Zoho Mail' },
+  { key: 'one', label: 'Zoho One' },
+];
+
 const Pricing = ({ title, description, productName, selectedTallyService: controlledTallyService, setSelectedTallyService: setControlledTallyService, selectedBusyCategory: controlledBusyCategory, setSelectedBusyCategory: setControlledBusyCategory }: PricingProductProps) => {
   const [selectedDuration, setSelectedDuration] = useState<TallyDuration>("1_month");
   const [busyTab, setBusyTab] = useState<BusyTab>("perpetual");
   const [busyUserType, setBusyUserType] = useState<BusyUserType>("single");
-  const [zohoPlanGroup, setZohoPlanGroup] = useState<'starter' | 'beyond'>('starter');
-  const [zohoBilling, setZohoBilling] = useState<'yearly' | 'monthly'>('yearly');
+  const [zohoPlanGroup, setZohoPlanGroup] = useState<'starter' | 'beyond'>("starter");
+  const [zohoBilling, setZohoBilling] = useState<'yearly' | 'monthly'>("yearly");
   const [internalTallyService, setInternalTallyService] = useState<string>("new-products");
   const [internalBusyCategory, setInternalBusyCategory] = useState<string>("desktop");
-  const [busyOnlineType, setBusyOnlineType] = useState<'access' | 'sql'>('access');
-  const [busyOnlineBilling, setBusyOnlineBilling] = useState<'annually' | 'quarterly'>('annually');
+  const [busyOnlineType, setBusyOnlineType] = useState<'access' | 'sql'>("access");
+  const [busyOnlineBilling, setBusyOnlineBilling] = useState<'annually' | 'quarterly'>("annually");
+
+  // New: Zoho product tab state
+  const [selectedZohoProduct, setSelectedZohoProduct] = useState<'books' | 'crm' | 'one' | 'mail'>('books');
+  const [crmBilling, setCrmBilling] = useState<'yearly' | 'monthly'>('yearly');
+  const [oneBilling, setOneBilling] = useState<'yearly' | 'monthly'>('yearly');
 
   // Use controlled or internal state
   const selectedTallyService = controlledTallyService !== undefined ? controlledTallyService : internalTallyService;
@@ -1126,23 +1414,30 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
   const setSelectedBusyCategory = setControlledBusyCategory !== undefined ? setControlledBusyCategory : setInternalBusyCategory;
 
   // Debug logs
-  console.log('Pricing selectedTallyService:', selectedTallyService);
-  console.log('Pricing selectedBusyCategory:', selectedBusyCategory);
+  // console.log('Pricing selectedTallyService:', selectedTallyService);
+  // console.log('Pricing selectedBusyCategory:', selectedBusyCategory);
 
   let currentPlans: any[] = [];
+  // New: Zoho product tab logic
   if (productName === 'zoho') {
-    currentPlans = zohoPricing[zohoPlanGroup][zohoBilling];
+    if (selectedZohoProduct === 'books') {
+      currentPlans = zohoPricing[zohoPlanGroup][zohoBilling];
+    } else if (selectedZohoProduct === 'crm') {
+      currentPlans = zohoCrmPricing[crmBilling];
+    } else if (selectedZohoProduct === 'one') {
+      currentPlans = zohoOnePricing[oneBilling];
+    } else if (selectedZohoProduct === 'mail') {
+      currentPlans = zohoMailPricing['yearly'];
+    }
   } else if (productName === 'tally') {
     currentPlans = (plans.tally as { [key: string]: any[] })[selectedTallyService] || [];
   } else if (productName === 'busy') {
     const busyPlans = (plans.busy as any)[selectedBusyCategory || 'desktop'];
     if (selectedBusyCategory === 'desktop') {
-      // For desktop, we need to handle the nested structure
       if (busyPlans && busyPlans[busyTab] && busyPlans[busyTab][busyUserType]) {
         currentPlans = busyPlans[busyTab][busyUserType];
       }
     } else if (selectedBusyCategory === 'online') {
-      // For online, use the new structure
       const onlinePlan = busyPlans[busyOnlineType][busyOnlineBilling];
       currentPlans = [
         {
@@ -1156,7 +1451,6 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
         }
       ];
     } else {
-      // For other categories, it's a direct array
       currentPlans = Array.isArray(busyPlans) ? busyPlans : [];
     }
   } else if (productName === 'ms-azure') {
@@ -1263,6 +1557,141 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
   return (
     <section id="pricing-section" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
+        {/* Zoho Product Tabs */}
+        {productName === 'zoho' && (
+          <div className="flex flex-col items-center mb-8 gap-4">
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
+              {zohoProducts.map((prod) => (
+                <button
+                  key={prod.key}
+                  onClick={() => setSelectedZohoProduct(prod.key as any)}
+                  className={`px-4 py-2 rounded-full font-semibold transition ${
+                    selectedZohoProduct === prod.key
+                      ? 'bg-red-600 text-white'
+                      : 'bg-white text-primary border border-primary'
+                  }`}
+                >
+                  {prod.label}
+                </button>
+              ))}
+            </div>
+            {/* Books: Plan Group and Billing Toggle */}
+            {selectedZohoProduct === 'books' && (
+              <>
+                <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-0 mb-4">
+                  <button
+                    className={`px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold border border-gray-200 ${
+                      zohoPlanGroup === 'starter' 
+                        ? 'bg-red-600 text-white rounded-lg sm:rounded-tl-full sm:rounded-bl-full sm:rounded-tr-none sm:rounded-br-none' 
+                        : 'bg-white text-gray-700 rounded-lg sm:rounded-tl-full sm:rounded-bl-full sm:rounded-tr-none sm:rounded-br-none'
+                    }`}
+                    onClick={() => setZohoPlanGroup('starter')}
+                  >
+                    Plans to get you started
+                  </button>
+                  <button
+                    className={`px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold border border-gray-200 ${
+                      zohoPlanGroup === 'beyond' 
+                        ? 'bg-red-600 text-white rounded-lg sm:rounded-tr-full sm:rounded-br-full sm:rounded-tl-none sm:rounded-bl-none' 
+                        : 'bg-white text-gray-700 rounded-lg sm:rounded-tr-full sm:rounded-br-full sm:rounded-tl-none sm:rounded-bl-none'
+                    }`}
+                    onClick={() => setZohoPlanGroup('beyond')}
+                  >
+                    Plans that go beyond the basic
+                  </button>
+                </div>
+                <div className="flex items-center gap-2 sm:gap-4">
+                  <span
+                    className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                      zohoBilling === 'monthly' ? 'text-red-600' : 'text-gray-500'
+                    }`}
+                  >
+                    Monthly
+                  </span>
+                  <button
+                    className={`relative inline-flex h-6 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
+                    onClick={() => setZohoBilling(zohoBilling === 'yearly' ? 'monthly' : 'yearly')}
+                    aria-pressed={zohoBilling === 'monthly'}
+                  >
+                    <span
+                      className={`absolute top-0.5 left-0.5 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                        zohoBilling === 'yearly' ? 'translate-x-6 sm:translate-x-8' : 'translate-x-0'
+                      }`}
+                    />
+                  </button>
+                  <span
+                    className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                      zohoBilling === 'yearly' ? 'text-red-600' : 'text-gray-700'
+                    }`}
+                  >
+                    Yearly
+                  </span>
+                </div>
+              </>
+            )}
+            {/* CRM: Billing Toggle */}
+            {selectedZohoProduct === 'crm' && (
+              <div className="flex items-center gap-2 sm:gap-4 mb-4">
+                <span
+                  className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                    crmBilling === 'monthly' ? 'text-red-600' : 'text-gray-500'
+                  }`}
+                >
+                  Monthly
+                </span>
+                <button
+                  className={`relative inline-flex h-6 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
+                  onClick={() => setCrmBilling(crmBilling === 'yearly' ? 'monthly' : 'yearly')}
+                  aria-pressed={crmBilling === 'monthly'}
+                >
+                  <span
+                    className={`absolute top-0.5 left-0.5 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                      crmBilling === 'yearly' ? 'translate-x-6 sm:translate-x-8' : 'translate-x-0'
+                    }`}
+                  />
+                </button>
+                <span
+                  className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                    crmBilling === 'yearly' ? 'text-red-600' : 'text-gray-700'
+                  }`}
+                >
+                  Yearly
+                </span>
+              </div>
+            )}
+            {/* One: Billing Toggle */}
+            {selectedZohoProduct === 'one' && (
+              <div className="flex items-center gap-2 sm:gap-4 mb-4">
+                <span
+                  className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                    oneBilling === 'monthly' ? 'text-red-600' : 'text-gray-500'
+                  }`}
+                >
+                  Monthly
+                </span>
+                <button
+                  className={`relative inline-flex h-6 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
+                  onClick={() => setOneBilling(oneBilling === 'yearly' ? 'monthly' : 'yearly')}
+                  aria-pressed={oneBilling === 'monthly'}
+                >
+                  <span
+                    className={`absolute top-0.5 left-0.5 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                      oneBilling === 'yearly' ? 'translate-x-6 sm:translate-x-8' : 'translate-x-0'
+                    }`}
+                  />
+                </button>
+                <span
+                  className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                    oneBilling === 'yearly' ? 'text-red-600' : 'text-gray-700'
+                  }`}
+                >
+                  Yearly
+                </span>
+              </div>
+            )}
+            {/* Mail: No toggle needed */}
+          </div>
+        )}
         {/* Busy Category Selection */}
         {productName === "busy" && (
           <div className="flex flex-col items-center gap-4 mb-8">
@@ -1404,63 +1833,6 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
           </div>
         )}
 
-        {/* Zoho Tabs and Toggle */}
-        {productName === "zoho" && (
-          <div className="flex flex-col items-center mb-8 gap-4">
-            {/* Tabs */}
-            <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-0 mb-4">
-              <button
-                className={`px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold border border-gray-200 ${
-                  zohoPlanGroup === 'starter' 
-                    ? 'bg-red-600 text-white rounded-lg sm:rounded-tl-full sm:rounded-bl-full sm:rounded-tr-none sm:rounded-br-none' 
-                    : 'bg-white text-gray-700 rounded-lg sm:rounded-tl-full sm:rounded-bl-full sm:rounded-tr-none sm:rounded-br-none'
-                }`}
-                onClick={() => setZohoPlanGroup('starter')}
-              >
-                Plans to get you started
-              </button>
-              <button
-                className={`px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold border border-gray-200 ${
-                  zohoPlanGroup === 'beyond' 
-                    ? 'bg-red-600 text-white rounded-lg sm:rounded-tr-full sm:rounded-br-full sm:rounded-tl-none sm:rounded-bl-none' 
-                    : 'bg-white text-gray-700 rounded-lg sm:rounded-tr-full sm:rounded-br-full sm:rounded-tl-none sm:rounded-bl-none'
-                }`}
-                onClick={() => setZohoPlanGroup('beyond')}
-              >
-                Plans that go beyond the basic
-              </button>
-            </div>
-            {/* Billing Toggle */}
-            <div className="flex items-center gap-2 sm:gap-4">
-              <span
-                className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
-                  zohoBilling === 'monthly' ? 'text-red-600' : 'text-gray-500'
-                }`}
-              >
-                Monthly
-              </span>
-              <button
-                className={`relative inline-flex h-6 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600`}
-                onClick={() => setZohoBilling(zohoBilling === 'yearly' ? 'monthly' : 'yearly')}
-                aria-pressed={zohoBilling === 'monthly'}
-              >
-                <span
-                  className={`absolute top-0.5 left-0.5 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
-                    zohoBilling === 'yearly' ? 'translate-x-6 sm:translate-x-8' : 'translate-x-0'
-                  }`}
-                />
-              </button>
-              <span
-                className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
-                  zohoBilling === 'yearly' ? 'text-red-600' : 'text-gray-700'
-                }`}
-              >
-                Yearly
-              </span>
-            </div>
-          </div>
-        )}
-
         <div className="w-full flex justify-center">
           <div
             className={`grid gap-6 max-w-7xl mx-auto place-items-center ${
@@ -1518,7 +1890,10 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                         <div className="flex items-center gap-2" key={idx}>
                           {featureIcon(typeof feature === 'string' ? feature : feature.name, idx)}
                           <span className="text-sm text-gray-700">
-                            {typeof feature === 'string' ? feature : feature.name}
+                            {/* If feature is 'know price', show the plan's price instead */}
+                            {typeof feature === 'string'
+                              ? (feature.toLowerCase().includes('know price') ? plan.price : feature)
+                              : (feature.name && feature.name.toLowerCase().includes('know price') ? plan.price : feature.name)}
                           </span>
                         </div>
                       ))}
@@ -1531,7 +1906,7 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                   <Link href="/contact">
                     <button className="w-full bg-red-600 text-white font-semibold py-2.5 rounded-lg shadow hover:bg-red-700 transition flex items-center justify-center gap-2">
                       <Phone className="h-4 w-4" />
-                      {plan.buttonText || 'Contact Us'}
+                      Contact Us
                     </button>
                   </Link>
                 </div>

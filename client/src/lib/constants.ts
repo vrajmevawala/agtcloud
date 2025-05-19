@@ -45,10 +45,10 @@ export const productCategories = [
     name: "Zoho",
     slug: "zoho",
     services: [
-      { name: "CRM", slug: "crm", description: "Complete customer relationship management" },
-      { name: "Books", slug: "books", description: "Online accounting made simple" },
-      { name: "ZohoOne", slug: "zohoone", description: "It is an all-in-one platform for managing every aspect of your business." },
-      { name: "Mail", slug: "mail", description: "Professional email hosting for business" }
+      { name: "Zoho Books", slug: "books", description: "Online accounting made simple" },
+      { name: "Zoho CRM", slug: "crm", description: "Complete customer relationship management" },
+      { name: "Zoho Mail", slug: "mail", description: "Professional email hosting for business" },
+      { name: "Zoho One", slug: "zohoone", description: "It is an all-in-one platform for managing every aspect of your business." }
     ]
   }
 ];

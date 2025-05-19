@@ -1563,13 +1563,13 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
       <div className="container mx-auto px-4">
         {/* Zoho Product Tabs */}
         {productName === 'zoho' && (
-          <div className="flex flex-col items-center mb-8 gap-4">
-            <div className="flex flex-wrap justify-center gap-2 mb-4">
+          <div className="flex flex-col items-center mb-8 gap-4 w-full">
+            <div className="flex flex-wrap justify-center gap-2 mb-4 w-full overflow-x-auto scrollbar-hide">
               {zohoProducts.map((prod) => (
                 <button
                   key={prod.key}
                   onClick={() => setSelectedZohoProduct(prod.key as any)}
-                  className={`px-4 py-2 rounded-full font-semibold transition ${
+                  className={`px-4 py-2 rounded-full font-semibold transition whitespace-nowrap min-w-[120px] text-sm sm:text-base ${
                     selectedZohoProduct === prod.key
                       ? 'bg-red-600 text-white'
                       : 'bg-white text-primary border border-primary'
@@ -1582,9 +1582,9 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
             {/* Books: Plan Group and Billing Toggle */}
             {selectedZohoProduct === 'books' && (
               <>
-                <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-0 mb-4">
+                <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-0 mb-4 w-full overflow-x-auto scrollbar-hide">
                   <button
-                    className={`px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold border border-gray-200 ${
+                    className={`px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold border border-gray-200 whitespace-nowrap min-w-[160px] ${
                       zohoPlanGroup === 'starter' 
                         ? 'bg-red-600 text-white rounded-lg sm:rounded-tl-full sm:rounded-bl-full sm:rounded-tr-none sm:rounded-br-none' 
                         : 'bg-white text-gray-700 rounded-lg sm:rounded-tl-full sm:rounded-bl-full sm:rounded-tr-none sm:rounded-br-none'
@@ -1594,7 +1594,7 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                     Plans to get you started
                   </button>
                   <button
-                    className={`px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold border border-gray-200 ${
+                    className={`px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold border border-gray-200 whitespace-nowrap min-w-[160px] ${
                       zohoPlanGroup === 'beyond' 
                         ? 'bg-red-600 text-white rounded-lg sm:rounded-tr-full sm:rounded-br-full sm:rounded-tl-none sm:rounded-bl-none' 
                         : 'bg-white text-gray-700 rounded-lg sm:rounded-tr-full sm:rounded-br-full sm:rounded-tl-none sm:rounded-bl-none'
@@ -1604,27 +1604,27 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                     Plans that go beyond the basic
                   </button>
                 </div>
-                <div className="flex items-center gap-2 sm:gap-4">
+                <div className="flex items-center gap-2 sm:gap-4 w-full flex-wrap justify-center mx-auto">
                   <span
-                    className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                    className={`text-xs sm:text-sm md:text-base font-semibold transition-colors duration-300 ${
                       zohoBilling === 'monthly' ? 'text-red-600' : 'text-gray-500'
                     }`}
                   >
                     Monthly
                   </span>
                   <button
-                    className="relative inline-flex h-8 w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
+                    className="relative inline-flex h-7 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
                     onClick={() => setZohoBilling(zohoBilling === 'yearly' ? 'monthly' : 'yearly')}
                     aria-pressed={zohoBilling === 'monthly'}
                   >
                     <span
-                      className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
-                        zohoBilling === 'yearly' ? 'translate-x-8' : 'translate-x-0'
+                      className={`absolute top-1 left-1 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                        zohoBilling === 'yearly' ? 'translate-x-5 sm:translate-x-8' : 'translate-x-0'
                       }`}
                     />
                   </button>
                   <span
-                    className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                    className={`text-xs sm:text-sm md:text-base font-semibold transition-colors duration-300 ${
                       zohoBilling === 'yearly' ? 'text-red-600' : 'text-gray-700'
                     }`}
                   >
@@ -1635,27 +1635,27 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
             )}
             {/* CRM: Billing Toggle */}
             {selectedZohoProduct === 'crm' && (
-              <div className="flex items-center gap-2 sm:gap-4 mb-4">
+              <div className="flex items-center gap-2 sm:gap-4 mb-4 w-full flex-wrap justify-center mx-auto">
                 <span
-                  className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                  className={`text-xs sm:text-sm md:text-base font-semibold transition-colors duration-300 ${
                     crmBilling === 'monthly' ? 'text-red-600' : 'text-gray-500'
                   }`}
                 >
                   Monthly
                 </span>
                 <button
-                  className="relative inline-flex h-8 w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
+                  className="relative inline-flex h-7 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
                   onClick={() => setCrmBilling(crmBilling === 'yearly' ? 'monthly' : 'yearly')}
                   aria-pressed={crmBilling === 'monthly'}
                 >
                   <span
-                    className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
-                      crmBilling === 'yearly' ? 'translate-x-8' : 'translate-x-0'
+                    className={`absolute top-1 left-1 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                      crmBilling === 'yearly' ? 'translate-x-5 sm:translate-x-8' : 'translate-x-0'
                     }`}
                   />
                 </button>
                 <span
-                  className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                  className={`text-xs sm:text-sm md:text-base font-semibold transition-colors duration-300 ${
                     crmBilling === 'yearly' ? 'text-red-600' : 'text-gray-700'
                   }`}
                 >
@@ -1665,27 +1665,27 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
             )}
             {/* One: Billing Toggle */}
             {selectedZohoProduct === 'zohoone' && (
-              <div className="flex items-center gap-2 sm:gap-4 mb-4">
+              <div className="flex items-center gap-2 sm:gap-4 mb-4 w-full flex-wrap justify-center mx-auto">
                 <span
-                  className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                  className={`text-xs sm:text-sm md:text-base font-semibold transition-colors duration-300 ${
                     oneBilling === 'monthly' ? 'text-red-600' : 'text-gray-500'
                   }`}
                 >
                   Monthly
                 </span>
                 <button
-                  className="relative inline-flex h-8 w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
+                  className="relative inline-flex h-7 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
                   onClick={() => setOneBilling(oneBilling === 'yearly' ? 'monthly' : 'yearly')}
                   aria-pressed={oneBilling === 'monthly'}
                 >
                   <span
-                    className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
-                      oneBilling === 'yearly' ? 'translate-x-8' : 'translate-x-0'
+                    className={`absolute top-1 left-1 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                      oneBilling === 'yearly' ? 'translate-x-5 sm:translate-x-8' : 'translate-x-0'
                     }`}
                   />
                 </button>
                 <span
-                  className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                  className={`text-xs sm:text-sm md:text-base font-semibold transition-colors duration-300 ${
                     oneBilling === 'yearly' ? 'text-red-600' : 'text-gray-700'
                   }`}
                 >
@@ -1698,14 +1698,14 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
         )}
         {/* Busy Category Selection */}
         {productName === "busy" && (
-          <div className="flex flex-col items-center gap-4 mb-8">
+          <div className="flex flex-col items-center gap-4 mb-8 w-full">
             {/* Category Selection */}
-            <div className="flex justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-2 w-full overflow-x-auto scrollbar-hide">
               {[{key: 'desktop', label: 'Desktop'}, {key: 'mobile', label: 'Mobile'}, {key: 'online', label: 'Online'}, {key: 'recom', label: 'Recom'}].map(cat => (
                 <button
                   key={cat.key}
                   onClick={() => setSelectedBusyCategory(cat.key)}
-                  className={`px-4 py-2 rounded-full font-semibold transition ${
+                  className={`px-4 py-2 rounded-full font-semibold transition whitespace-nowrap min-w-[120px] text-sm sm:text-base ${
                     selectedBusyCategory === cat.key
                       ? "bg-primary text-white"
                       : "bg-white text-primary border border-primary"
@@ -1720,12 +1720,12 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
             {selectedBusyCategory === 'desktop' && (
               <>
                 {/* Perpetual/Subscription Toggle */}
-                <div className="flex justify-center gap-2">
+                <div className="flex flex-wrap justify-center gap-2 w-full overflow-x-auto scrollbar-hide">
                   {busyTabs.map(tab => (
                     <button
                       key={tab.key}
                       onClick={() => setBusyTab(tab.key)}
-                      className={`px-4 py-2 rounded-full font-semibold transition ${
+                      className={`px-4 py-2 rounded-full font-semibold transition whitespace-nowrap min-w-[120px] text-sm sm:text-base ${
                         busyTab === tab.key
                           ? "bg-primary text-white"
                           : "bg-white text-primary border border-primary"
@@ -1737,27 +1737,27 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                 </div>
 
                 {/* Single/Multi User Toggle Switch */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 flex-wrap w-full justify-center mx-auto">
                   <span
-                    className={`text-sm font-semibold transition-colors duration-300 ${
+                    className={`text-xs sm:text-sm font-semibold transition-colors duration-300 ${
                       busyUserType === 'single' ? 'text-red-600' : 'text-gray-500'
                     }`}
                   >
                     Single User
                   </span>
                   <button
-                    className="relative inline-flex h-8 w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
+                    className="relative inline-flex h-7 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
                     onClick={() => setBusyUserType(busyUserType === 'single' ? 'multi' : 'single')}
                     aria-pressed={busyUserType === 'multi'}
                   >
                     <span
-                      className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
-                        busyUserType === 'multi' ? 'translate-x-8' : 'translate-x-0'
+                      className={`absolute top-1 left-1 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                        busyUserType === 'multi' ? 'translate-x-5 sm:translate-x-8' : 'translate-x-0'
                       }`}
                     />
                   </button>
                   <span
-                    className={`text-sm font-semibold transition-colors duration-300 ${
+                    className={`text-xs sm:text-sm font-semibold transition-colors duration-300 ${
                       busyUserType === 'multi' ? 'text-red-600' : 'text-gray-500'
                     }`}
                   >
@@ -1770,12 +1770,12 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
             {selectedBusyCategory === 'online' && (
               <>
                 {/* Access/SQL Toggle */}
-                <div className="flex justify-center gap-2">
+                <div className="flex flex-wrap justify-center gap-2 w-full overflow-x-auto scrollbar-hide">
                   {['access', 'sql'].map(type => (
                     <button
                       key={type}
                       onClick={() => setBusyOnlineType(type as 'access' | 'sql')}
-                      className={`px-4 py-2 rounded-full font-semibold transition ${
+                      className={`px-4 py-2 rounded-full font-semibold transition whitespace-nowrap min-w-[120px] text-sm sm:text-base ${
                         busyOnlineType === type
                           ? "bg-primary text-white"
                           : "bg-white text-primary border border-primary"
@@ -1786,27 +1786,27 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                   ))}
                 </div>
                 {/* Annually/Quarterly Toggle */}
-                <div className="flex items-center gap-4 mt-2">
+                <div className="flex items-center gap-4 mt-2 flex-wrap w-full justify-center mx-auto">
                   <span
-                    className={`text-sm font-semibold transition-colors duration-300 ${
+                    className={`text-xs sm:text-sm font-semibold transition-colors duration-300 ${
                       busyOnlineBilling === 'annually' ? 'text-red-600' : 'text-gray-500'
                     }`}
                   >
                     Annually
                   </span>
                   <button
-                    className="relative inline-flex h-8 w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
+                    className="relative inline-flex h-7 w-12 sm:h-8 sm:w-16 rounded-full transition-colors duration-300 focus:outline-none bg-red-600"
                     onClick={() => setBusyOnlineBilling(busyOnlineBilling === 'annually' ? 'quarterly' : 'annually')}
                     aria-pressed={busyOnlineBilling === 'quarterly'}
                   >
                     <span
-                      className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
-                        busyOnlineBilling === 'quarterly' ? 'translate-x-8' : 'translate-x-0'
+                      className={`absolute top-1 left-1 h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white shadow-lg ring-1 ring-black/5 transform transition-transform duration-300 ${
+                        busyOnlineBilling === 'quarterly' ? 'translate-x-5 sm:translate-x-8' : 'translate-x-0'
                       }`}
                     />
                   </button>
                   <span
-                    className={`text-sm font-semibold transition-colors duration-300 ${
+                    className={`text-xs sm:text-sm font-semibold transition-colors duration-300 ${
                       busyOnlineBilling === 'quarterly' ? 'text-red-600' : 'text-gray-500'
                     }`}
                   >
@@ -1820,12 +1820,12 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
         
         {/* Tally Service Selection */}
         {productName === "tally" && (
-          <div className="flex justify-center mb-8 gap-2">
+          <div className="flex flex-wrap justify-center mb-8 gap-2 w-full overflow-x-auto scrollbar-hide">
             {productCategories.find(cat => cat.slug === "tally")?.services.map(service => (
               <button
                 key={service.slug}
                 onClick={() => setSelectedTallyService(service.slug)}
-                className={`px-4 py-2 rounded-full font-semibold transition ${
+                className={`px-4 py-2 rounded-full font-semibold transition whitespace-nowrap min-w-[120px] text-sm sm:text-base ${
                   selectedTallyService === service.slug
                     ? "bg-primary text-white"
                     : "bg-white text-primary border border-primary"

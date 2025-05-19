@@ -199,7 +199,7 @@ const Hero = ({
                 transition: "transform 0.2s ease-out",
                 maxWidth: "100%",
               }}
-              className="hover:scale-105 transition-all duration-300 w-full max-w-xs sm:max-w-md md:max-w-lg"
+              className="hover:scale-105 transition-all duration-300 w-full max-w-sm sm:max-w-md md:max-w-lg"
             >
               {images.map((img, idx) => (
                 <img

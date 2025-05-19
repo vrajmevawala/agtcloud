@@ -111,7 +111,7 @@ const Hero = ({
   };
 
   return (
-    <section className="text-black pt-36 pb-16 md:pt-40 md:pb-24 h-screen overflow-hidden relative">
+    <section className="text-black pt-28 pb-10 md:pt-36 md:pb-16 lg:pt-40 lg:pb-24 min-h-[80vh] h-auto overflow-hidden relative">
       <video
         autoPlay
         loop
@@ -134,11 +134,11 @@ const Hero = ({
         Your browser does not support the video tag.
       </video>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="absolute top-0 right-0 opacity-10 w-64 h-64 rounded-full bg-yellow-400 blur-3xl -mr-32 -mt-32"></div>
-        <div className="absolute bottom-0 left-0 opacity-10 w-96 h-96 rounded-full bg-yellow-400 blur-3xl -ml-48 -mb-48"></div>
+      <div className="container mx-auto px-2 sm:px-4 relative z-10">
+        <div className="absolute top-0 right-0 opacity-10 w-32 h-32 sm:w-64 sm:h-64 rounded-full bg-yellow-400 blur-3xl -mr-12 -mt-12 sm:-mr-32 sm:-mt-32"></div>
+        <div className="absolute bottom-0 left-0 opacity-10 w-48 h-48 sm:w-96 sm:h-96 rounded-full bg-yellow-400 blur-3xl -ml-16 -mb-16 sm:-ml-48 sm:-mb-48"></div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -147,22 +147,22 @@ const Hero = ({
           >
             <motion.h1
               variants={itemVariants}
-              className="font-bold text-3xl md:text-5xl lg:text-6xl mb-6 leading-tight relative inline-block"
+              className="font-bold text-2xl sm:text-3xl md:text-5xl lg:text-6xl mb-4 md:mb-6 leading-tight relative inline-block"
             >
               {title}
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl mb-8 text-slate-500 max-w-xl"
+              className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 text-slate-500 max-w-xs sm:max-w-md md:max-w-xl"
             >
               {description}
             </motion.p>
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 md:gap-4">
               <Link href={primaryButtonLink}>
                 <Button
                   size="lg"
                   variant="secondary"
-                  className="bg-[#FFCC00] text-gray-800 hover:bg-white hover:text-primary font-medium text-lg px-8 py-3 rounded-md shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
+                  className="bg-[#FFCC00] text-gray-800 hover:bg-white hover:text-primary font-medium text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 rounded-md shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
                 >
                   {primaryButtonText}
                 </Button>
@@ -170,11 +170,11 @@ const Hero = ({
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-red-600 text-red-600 bg-white hover:bg-red-600 hover:border-red-600 hover:text-white font-medium text-lg px-8 py-3 rounded-md shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
+                className="border-2 border-red-600 text-red-600 bg-white hover:bg-red-600 hover:border-red-600 hover:text-white font-medium text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 rounded-md shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
                 onClick={() => setShowDemoModal(true)}
               >
                 <i className="bx bx-calendar-alt"></i>
-                <span>Book Appointment</span>
+                <span className="ml-2">Book Appointment</span>
               </Button>
             </motion.div>
           </motion.div>
@@ -183,7 +183,7 @@ const Hero = ({
             initial={{ opacity: 0, scale: 0.9, x: 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="z-10 flex flex-col items-center justify-center relative"
+            className="z-10 flex flex-col items-center justify-center relative w-full"
           >
             <div style={circleStyle}></div>
 
@@ -197,8 +197,9 @@ const Hero = ({
                 transformStyle: "preserve-3d",
                 perspective: "1000px",
                 transition: "transform 0.2s ease-out",
+                maxWidth: "100%",
               }}
-              className="hover:scale-150 transition-all duration-300"
+              className="hover:scale-105 transition-all duration-300 w-full max-w-xs sm:max-w-md md:max-w-lg"
             >
               {images.map((img, idx) => (
                 <img
@@ -215,13 +216,16 @@ const Hero = ({
                     opacity: idx === currentIndex ? 1 : 0,
                     transition: "opacity 0.7s ease",
                     backfaceVisibility: "hidden",
+                    touchAction: "manipulation",
                   }}
+                  draggable={false}
+                  onTouchStart={() => setCurrentIndex(idx)}
                 />
               ))}
             </div>
 
             {/* Selector Dots */}
-            <div style={{ display: "flex", justifyContent: "center", marginTop: 16 }}>
+            <div className="flex justify-center mt-3 md:mt-4">
               {images.map((_, idx) => (
                 <button
                   key={idx}
@@ -238,6 +242,7 @@ const Hero = ({
                     cursor: "pointer",
                   }}
                   aria-label={`Go to slide ${idx + 1}`}
+                  className="focus:outline-none"
                 />
               ))}
             </div>
@@ -247,17 +252,17 @@ const Hero = ({
 
       <ScheduleDemoModal open={showDemoModal} onClose={() => setShowDemoModal(false)} title="Schedule a Demo" />
       <div
-      style={{
-        position: "absolute",
-        bottom: 0,
-        left: 0,
-        width: "100%",
-        height: "100px",
-        background: "linear-gradient(to top, white, rgba(255,255,255,0))",
-        zIndex: 5,
-        pointerEvents: "none",
-      }}
-    />
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          height: "100px",
+          background: "linear-gradient(to top, white, rgba(255,255,255,0))",
+          zIndex: 5,
+          pointerEvents: "none",
+        }}
+      />
     </section>
   );
 };

@@ -37,11 +37,11 @@ const WhatsAppFloat = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -120 }}
           transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-          className="fixed bottom-20 left-6 z-50 flex items-center gap-4 bg-[#25D366] text-white px-7 py-4 rounded-full shadow-2xl hover:bg-[#128C7E] transition-colors duration-300 text-xl font-bold"
+          className="fixed bottom-20 left-6 z-50 flex items-center gap-4 bg-[#25D366] text-white px-4 py-2 rounded-full shadow-2xl hover:bg-[#128C7E] transition-colors duration-300 text-xl font-bold sm:px-4 sm:py-2 px-3 py-3 sm:bottom-20 bottom-6 sm:left-6 left-3"
           style={{ boxShadow: '0 8px 32px 0 rgba(34, 139, 34, 0.25)' }}
         >
-          <FaWhatsapp className="text-4xl" />
-          <span className="font-bold text-lg md:text-xl">Contact Now</span>
+          <FaWhatsapp className="text-2xl sm:text-2xl text-xl" />
+          <span className="font-semibold text-lg md:text-xl hidden sm:inline">Contact Now</span>
         </motion.a>
       )}
     </AnimatePresence>

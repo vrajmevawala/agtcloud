@@ -12,6 +12,7 @@ import LoadingScreen from "@/components/ui/loading-screen";
 import { AnimatePresence } from "framer-motion";
 import { lazy, Suspense, useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
+import WhatsAppFloat from "@/components/ui/whatsapp-float";
 
 // Lazy load less frequently accessed pages to improve initial load time
 const ContactPage = lazy(() => import("@/pages/Contact"));
@@ -88,6 +89,7 @@ function App() {
               <Router />
             </main>
             <Footer />
+            <WhatsAppFloat />
           </div>
         )}
       </TooltipProvider>

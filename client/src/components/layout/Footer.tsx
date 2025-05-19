@@ -49,11 +49,11 @@ const Footer = () => {
             </div>
             {/* App Links */}
             <div className="flex space-x-4 mt-6">
-              <a href="https://play.google.com/store/apps/details?id=com.yourcompany.app" target="_blank" rel="noopener noreferrer" aria-label="Google Play Store" className="bg-gray-800 hover:bg-primary/80 transition-colors duration-300 cursor-pointer h-10 w-32 flex items-center justify-center rounded-lg border border-gray-700 hover:border-primary">
+              <a href="https://play.google.com/store/apps/details?id=com.agt.eventattendees&hl=en_IN" target="_blank" rel="noopener noreferrer" aria-label="Google Play Store" className="bg-gray-800 hover:bg-primary/80 transition-colors duration-300 cursor-pointer h-10 w-32 flex items-center justify-center rounded-lg border border-gray-700 hover:border-primary">
                 <FaGooglePlay className="h-6 w-6 mr-2" />
                 <span className="text-xs text-white font-semibold">Google Play</span>
               </a>
-              <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank" rel="noopener noreferrer" aria-label="Apple App Store" className="bg-gray-800 hover:bg-primary/80 transition-colors duration-300 cursor-pointer h-10 w-32 flex items-center justify-center rounded-lg border border-gray-700 hover:border-primary">
+              <a href="https://apps.apple.com/in/app/agt-event-for-attendees/id6504627862" target="_blank" rel="noopener noreferrer" aria-label="Apple App Store" className="bg-gray-800 hover:bg-primary/80 transition-colors duration-300 cursor-pointer h-10 w-32 flex items-center justify-center rounded-lg border border-gray-700 hover:border-primary">
                 <FaApple className="h-6 w-6 mr-2" />
                 <span className="text-xs text-white font-semibold">App Store</span>
               </a>

@@ -63,6 +63,11 @@ export default {
         },
       },
       keyframes: {
+        stirr: {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(7deg)' },
+          '75%': { transform: 'rotate(-7deg)' },
+        },
         "accordion-down": {
           from: {
             height: "0",
@@ -85,6 +90,7 @@ export default {
         },
       },
       animation: {
+        stirr: 'stirr 0.2s ease-in-out infinite ',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "marquee": "marquee 40s linear infinite",

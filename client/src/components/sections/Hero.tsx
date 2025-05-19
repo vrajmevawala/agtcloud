@@ -2,11 +2,11 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Play } from "lucide-react";
-import slide1 from "@/assets/hero/seminar.jpg";
-import slide2 from "@/assets/hero/award1.jpg";
-import slide3 from "@/assets/hero/speech.jpg";
-import slide4 from "@/assets/hero/award2.jpg";
-import { useState, useEffect } from "react";
+import slide1 from "@/assets/hero/ele1.png";
+import slide2 from "@/assets/hero/ele2.png";
+import slide3 from "@/assets/hero/ele3.png";
+import slide4 from "@/assets/hero/ele4.png";
+import { useState, useEffect, useRef } from "react";
 import ScheduleDemoModal from "@/components/sections/ScheduleDemoModal";
 
 interface HeroProps {
@@ -36,6 +36,7 @@ const Hero = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1024);
   const [showDemoModal, setShowDemoModal] = useState(false);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -70,7 +71,6 @@ const Hero = ({
     position: "relative" as const,
     overflow: "hidden",
     borderRadius: "1.5rem",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.18)",
   };
 
   const dotSize = isSmall ? 10 : 14;
@@ -87,6 +87,27 @@ const Hero = ({
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const container = imageContainerRef.current;
+    if (!container) return;
+
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    const rotateX = (-y / rect.height) * 100;
+    const rotateY = (x / rect.width) * 100;
+
+    container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  };
+
+  const handleMouseLeave = () => {
+    const container = imageContainerRef.current;
+    if (container) {
+      container.style.transform = `rotateX(0deg) rotateY(0deg)`;
+    }
   };
 
   return (
@@ -152,7 +173,7 @@ const Hero = ({
                 className="border-2 border-red-600 text-red-600 bg-white hover:bg-red-600 hover:border-red-600 hover:text-white font-medium text-lg px-8 py-3 rounded-md shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
                 onClick={() => setShowDemoModal(true)}
               >
-               < i class='bx  bx-calendar-alt'  ></i> 
+                <i className="bx bx-calendar-alt"></i>
                 <span>Book Appointment</span>
               </Button>
             </motion.div>
@@ -164,11 +185,21 @@ const Hero = ({
             transition={{ duration: 0.5, delay: 0.3 }}
             className="z-10 flex flex-col items-center justify-center relative"
           >
-            {/* Red Circle */}
             <div style={circleStyle}></div>
 
-            {/* Image Slider */}
-            <div style={sliderSize}>
+            {/* 3D Animated Image Slider */}
+            <div
+              ref={imageContainerRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                ...sliderSize,
+                transformStyle: "preserve-3d",
+                perspective: "1000px",
+                transition: "transform 0.2s ease-out",
+              }}
+              className="hover:scale-150 transition-all duration-300"
+            >
               {images.map((img, idx) => (
                 <img
                   key={img}
@@ -178,11 +209,12 @@ const Hero = ({
                     position: "absolute",
                     top: 0,
                     left: 0,
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
+                    width: "110%",
+                    height: "110%",
+                    objectFit: "contain",
                     opacity: idx === currentIndex ? 1 : 0,
                     transition: "opacity 0.7s ease",
+                    backfaceVisibility: "hidden",
                   }}
                 />
               ))}

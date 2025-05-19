@@ -48,7 +48,7 @@ const Header = () => {
     const interval = setInterval(() => {
       setShowAltNumber((prev) => !prev);
       setShowAltSite((prev) => !prev);
-    }, 2000); // Change every 2 seconds
+    }, 3000); // Change every 3 seconds
     return () => clearInterval(interval);
   }, []);
   
@@ -73,7 +73,7 @@ const Header = () => {
               href={showAltNumber ? "tel:+919558803148" : "tel:0261-3117799"}
               className="text-sm text-gray-600 hover:text-primary transition duration-300 flex items-center"
             >
-              <Phone className="h-4 w-4 mr-2 text-primary" />
+              <Phone className="h-4 w-4 mr-2 text-primary animate-stirr" />
               <span
                 key={showAltNumber ? "alt" : "main"}
                 className="hidden sm:inline transition-opacity duration-500 opacity-100"
@@ -211,6 +211,7 @@ const Header = () => {
                     <ChevronDown className="h-5 w-5 text-primary" />
                   </div>
                   <ul className="pl-4 mt-3 space-y-3">
+                    <li><Link href="/product/agt-cloud"><span className="block py-2 text-gray-600 hover:text-primary transition-colors duration-300 cursor-pointer">AGT Cloud</span></Link></li>
                     <li><Link href="/product/busy"><span className="block py-2 text-gray-600 hover:text-primary transition-colors duration-300 cursor-pointer">Busy Solutions</span></Link></li>
                     <li><Link href="/product/tally"><span className="block py-2 text-gray-600 hover:text-primary transition-colors duration-300 cursor-pointer">Tally Solutions</span></Link></li>
                     <li><Link href="/product/ms-azure"><span className="block py-2 text-gray-600 hover:text-primary transition-colors duration-300 cursor-pointer">MS Azure</span></Link></li>

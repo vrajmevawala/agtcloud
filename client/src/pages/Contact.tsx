@@ -59,12 +59,12 @@ export default function Contact() {
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardContent className="p-8 flex flex-col items-center text-center">
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <Mail className="h-8 w-8 text-primary" />
+                <a href="mailto:info@agtglobal.in"><Mail  className="h-8 w-8 text-primary" /></a>
               </div>
               <h3 className="font-bold text-xl mb-4">Email Us</h3>
-              <p className="text-gray-600">
+              <a href="mailto:info@agtglobal.in" className="text-gray-600">
                 info@agtglobal.in
-              </p>
+              </a>
             </CardContent>
           </Card>
         </div>

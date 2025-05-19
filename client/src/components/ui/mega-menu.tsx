@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { productCategories } from "@/lib/constants";
@@ -7,6 +7,7 @@ import { productCategories } from "@/lib/constants";
 export function MegaMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const [, setLocation] = useLocation();
 
   const handleMouseEnter = () => {
     setIsOpen(true);
@@ -53,18 +54,21 @@ export function MegaMenu() {
             animate={{ opacity: 1, y: 0, height: "auto" }}
             exit={{ opacity: 0, y: 10, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute left-1/2 -translate-x-1/2 mt-0 w-[900px] bg-white shadow-xl rounded-lg p-0 z-50 ml-[-300px] overflow-hidden"
+            className="absolute left-1/2 -translate-x-1/2 mt-0 w-[1200px] bg-white shadow-xl rounded-lg p-0 z-50 ml-[-400px] overflow-hidden"
           >
             <div className="relative">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full -mr-10 -mt-10"></div>
               <div className="absolute bottom-0 left-0 w-40 h-40 bg-primary/5 rounded-full -ml-10 -mb-10"></div>
 
-              <div className="grid grid-cols-4 gap-px relative z-10 min-w-0">
+              <div
+                className="flex flex-row justify-between relative z-10 min-w-0 w-full"
+                style={{ whiteSpace: "nowrap" }}
+              >
                 {productCategories.map((category) => (
                   <div
                     key={category.slug}
-                    className="p-4 hover:bg-gray-50 transition-colors duration-300 group/category"
+                    className="min-w-[220px] p-4 hover:bg-gray-50 transition-colors duration-300 group/category flex-shrink-0"
                   >
                     <Link
                       href={`/product/${category.slug}`}
@@ -80,7 +84,21 @@ export function MegaMenu() {
                         <li key={service.slug}>
                           <Link
                             href={`/product/${category.slug}`}
-                            onClick={() => setIsOpen(false)}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setIsOpen(false);
+                              setLocation(`/product/${category.slug}`);
+                              setTimeout(() => {
+                                window.dispatchEvent(
+                                  new CustomEvent("select-pricing-service", {
+                                    detail: {
+                                      category: category.slug,
+                                      slug: service.slug,
+                                    },
+                                  })
+                                );
+                              }, 100);
+                            }}
                           >
                             <span className="text-gray-600 hover:text-primary transition-all duration-300 cursor-pointer block hover:pl-2">
                               {service.name}

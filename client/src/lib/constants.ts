@@ -5,10 +5,20 @@ export const productCategories = [
     services: [
       { name: "Tally on AWS", slug: "aws", description: "Run TallyPrime on Amazon Web Services" },
       { name: "New Products", slug: "new-products", description: "Latest Tally products and solutions" },
-      { name: "Renewable", slug: "software-services", description: "Professional software services" },
+      { name: "Renew", slug: "software-services", description: "Professional software services" },
       { name: "Upgrades", slug: "upgrades", description: "Upgrade your existing Tally installation" },
       { name: "Tally Rental", slug: "rental", description: "Flexible rental options for Tally software" },
       { name: "Tally Virtual User", slug: "virtual-user", description: "Virtual user solutions for remote access" }
+    ]
+  },
+  {
+    name: "AGT Cloud",
+    slug: "agt-cloud",
+    services: [
+      { name: "Remote Access", slug: "remote-access", description: "Remote Access and Web Application Portal for seamless business connectivity." },
+      { name: "Remote Support", slug: "remote-support", description: "Remote Assistance and Screen Sharing for IT maintenance and support." },
+      { name: "Advanced Security", slug: "advanced-security", description: "Cybersecurity for Windows Servers and RDP infrastructure." },
+      { name: "Server Monitoring", slug: "server-monitoring", description: "Monitoring and Reporting for Remote Servers and cloud infrastructure." }
     ]
   },
   {
@@ -37,7 +47,7 @@ export const productCategories = [
     services: [
       { name: "CRM", slug: "crm", description: "Complete customer relationship management" },
       { name: "Books", slug: "books", description: "Online accounting made simple" },
-      { name: "Campaigns", slug: "campaigns", description: "Powerful marketing campaign tools" },
+      { name: "ZohoOne", slug: "zohoone", description: "It is an all-in-one platform for managing every aspect of your business." },
       { name: "Mail", slug: "mail", description: "Professional email hosting for business" }
     ]
   }

@@ -106,6 +106,18 @@ export default function Products() {
                           <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                           <span>
                             <span className="font-medium">{service.name}</span> - 
+                            {service.slug == 'aws' && ' Run TallyPrime on Amazon Web Services'}
+                            {service.slug == 'new-products' && ' Latest Tally products and solutions'}
+                            {service.slug == 'software-services' && ' Professional software services'}
+                            {service.slug == 'upgrades' && ' Upgrade your existing Tally installation'}
+                            {service.slug == 'rental' && ' Flexible rental options for Tally software'}
+                            {service.slug == 'virtual-user' && ' Virtual user solutions for remote access'}
+
+                            {service.slug === 'desktop' && ' Experience Efficient Accounting on Desktop'}
+                            {service.slug === 'mobile' && ' Manage business on your fingers'}
+                            {service.slug === 'online' && ' Most secured accounting on the cloud'}
+                            {service.slug === 'recom' && ' Ecommerce reconciliation in 1 min'}
+
                             {service.slug === 'accounting' && ' Complete financial management with GST-ready reporting'}
                             {service.slug === 'inventory' && ' Real-time stock tracking and management'}
                             {service.slug === 'gst' && ' Simplified GST compliance and filing'}
@@ -119,12 +131,13 @@ export default function Products() {
                             {service.slug === 'cloud-services' && ' Full-service cloud computing platform'}
                             {service.slug === 'virtual-machines' && ' Scalable computing resources on demand'}
                             {service.slug === 'database' && ' Managed database services for all needs'}
-                            {service.slug === 'devops' && ' Tools for development and operations integration'}
+                            {service.slug === 'ms-dynamic-365' && ' CRM and ERP solution for business management'}
                             
                             {service.slug === 'crm' && ' Complete customer relationship management'}
                             {service.slug === 'books' && ' Online accounting made simple'}
                             {service.slug === 'campaigns' && ' Powerful marketing campaign tools'}
                             {service.slug === 'mail' && ' Professional email hosting for business'}
+                            {service.slug === 'zohoone' && ' Unified suite of apps to run your entire business'}
                           </span>
                         </li>
                       ))}
@@ -137,9 +150,6 @@ export default function Products() {
                         Learn More
                       </Button>
                     </Link>
-                    <Button variant="outline">
-                      Request Demo
-                    </Button>
                   </div>
                 </motion.div>
                 
@@ -160,25 +170,7 @@ export default function Products() {
                             </div>
                             <h3 className="font-semibold mb-2">{service.name}</h3>
                             <p className="text-sm text-gray-500">
-                              {service.slug === 'accounting' && 'Financial management with GST support'}
-                              {service.slug === 'inventory' && 'Real-time stock management'}
-                              {service.slug === 'gst' && 'Simplified tax compliance'}
-                              {service.slug === 'payroll' && 'Complete salary processing'}
-                              
-                              {service.slug === 'prime' && 'All-in-one business software'}
-                              {service.slug === 'server' && 'Multi-user environment'}
-                              {service.slug === 'developer' && 'Custom development tools'}
-                              {service.slug === 'customization' && 'Business-specific solutions'}
-                              
-                              {service.slug === 'cloud-services' && 'Comprehensive cloud platform'}
-                              {service.slug === 'virtual-machines' && 'Scalable computing power'}
-                              {service.slug === 'database' && 'Reliable data management'}
-                              {service.slug === 'devops' && 'Development workflow tools'}
-                              
-                              {service.slug === 'crm' && 'Customer relationships'}
-                              {service.slug === 'books' && 'Simple online accounting'}
-                              {service.slug === 'campaigns' && 'Effective marketing tools'}
-                              {service.slug === 'mail' && 'Professional email service'}
+                              {service.description && ` ${service.description}`}
                             </p>
                           </div>
                         </Link>
@@ -200,13 +192,10 @@ export default function Products() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
+                <Button size="lg" className="bg-white text-primary hover:bg-yellow-300">
                   Contact Us
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-gray-100">
-                Schedule Demo
-              </Button>
             </div>
           </div>
         </div>

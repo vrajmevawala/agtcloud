@@ -2,14 +2,19 @@ import { PricingCard } from "@/components/ui/pricing-card";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowRight, Check, Cloud, User, Cpu, MemoryStick, HardDrive, RefreshCcw, Clock } from "lucide-react";
+import { ArrowRight, Check, Cloud, User, Cpu, MemoryStick, HardDrive, RefreshCcw, Clock, Phone } from "lucide-react";
 import React, { useState, Suspense, lazy } from "react";
 import { productCategories } from "@/lib/constants";
+import { FaWhatsapp } from "react-icons/fa";
 
 interface PricingProductProps {
   title: string;
   description: string;
   productName: string;
+  selectedTallyService?: string;
+  setSelectedTallyService?: (slug: string) => void;
+  selectedBusyCategory?: string;
+  setSelectedBusyCategory?: (slug: string) => void;
 }
 
 const durationTabs = [
@@ -41,7 +46,7 @@ const zohoPricing = {
         oldPrice: '₹899',
         price: '₹749',
         priceDescription: 'Price/Org/Month Billed Annually',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Free +', bold: true },
@@ -57,7 +62,7 @@ const zohoPricing = {
         oldPrice: '₹1,799',
         price: '₹1,499',
         priceDescription: 'Price/Org/Month Billed Annually',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         mostPopular: true,
         features: [
@@ -75,7 +80,7 @@ const zohoPricing = {
         oldPrice: '₹3,599',
         price: '₹2,999',
         priceDescription: 'Price/Org/Month Billed Annually',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Professional +', bold: true },
@@ -92,7 +97,7 @@ const zohoPricing = {
         oldPrice: '₹5,999',
         price: '₹4,999',
         priceDescription: 'Price/Org/Month Billed Annually',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Premium +', bold: true },
@@ -111,7 +116,7 @@ const zohoPricing = {
         oldPrice: '₹899',
         price: '₹899',
         priceDescription: 'Price/Org/Month',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Free +', bold: true },
@@ -127,7 +132,7 @@ const zohoPricing = {
         oldPrice: '₹1,799',
         price: '₹1,799',
         priceDescription: 'Price/Org/Month',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         mostPopular: true,
         features: [
@@ -145,7 +150,7 @@ const zohoPricing = {
         oldPrice: '₹3,599',
         price: '₹3,599',
         priceDescription: 'Price/Org/Month',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Professional +', bold: true },
@@ -162,7 +167,7 @@ const zohoPricing = {
         oldPrice: '₹5,999',
         price: '₹5,999',
         priceDescription: 'Price/Org/Month',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Premium +', bold: true },
@@ -183,7 +188,7 @@ const zohoPricing = {
         oldPrice: '₹1,799',
         price: '₹1,499',
         priceDescription: 'Price/Org/Month Billed Annually',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         mostPopular: true,
         features: [
@@ -201,7 +206,7 @@ const zohoPricing = {
         oldPrice: '₹3,599',
         price: '₹2,999',
         priceDescription: 'Price/Org/Month Billed Annually',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Professional +', bold: true },
@@ -218,7 +223,7 @@ const zohoPricing = {
         oldPrice: '₹5,999',
         price: '₹4,999',
         priceDescription: 'Price/Org/Month Billed Annually',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Premium +', bold: true },
@@ -235,7 +240,7 @@ const zohoPricing = {
         oldPrice: '₹9,599',
         price: '₹7,999',
         priceDescription: 'Price/Org/Month Billed Annually',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Elite +', bold: true },
@@ -253,7 +258,7 @@ const zohoPricing = {
         oldPrice: '₹1,799',
         price: '₹1,799',
         priceDescription: 'Price/Org/Month',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         mostPopular: true,
         features: [
@@ -271,7 +276,7 @@ const zohoPricing = {
         oldPrice: '₹3,599',
         price: '₹3,599',
         priceDescription: 'Price/Org/Month',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Professional +', bold: true },
@@ -288,7 +293,7 @@ const zohoPricing = {
         oldPrice: '₹5,999',
         price: '₹5,999',
         priceDescription: 'Price/Org/Month',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Premium +', bold: true },
@@ -305,7 +310,7 @@ const zohoPricing = {
         oldPrice: '₹9,599',
         price: '₹9,599',
         priceDescription: 'Price/Org/Month',
-        buttonText: 'Start my free trial',
+        buttonText: 'Contact Us',
         compare: true,
         features: [
           { name: 'Everything in Elite +', bold: true },
@@ -339,7 +344,7 @@ const plans = {
           {
             name: "BASIC",
             price: "₹9,999",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             features: [
               "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
               "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
@@ -352,7 +357,7 @@ const plans = {
           {
             name: "STANDARD",
             price: "₹14,999",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             mostPopular: true,
             features: [
               "All Features of BASIC",
@@ -363,7 +368,7 @@ const plans = {
           {
             name: "ENTERPRISE",
             price: "₹19,999",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             features: [
               "All Features of STANDARD",
               "Data Security: Voucher/Master Approval & Rejection",
@@ -376,7 +381,7 @@ const plans = {
           {
             name: "BASIC",
             price: "₹24,999",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             features: [
               "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
               "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
@@ -389,7 +394,7 @@ const plans = {
           {
             name: "STANDARD",
             price: "₹39,999",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             mostPopular: true,
             features: [
               "All Features of BASIC",
@@ -400,7 +405,7 @@ const plans = {
           {
             name: "ENTERPRISE",
             price: "₹57,999",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             features: [
               "All Features of STANDARD",
               "Data Security: Voucher/Master Approval & Rejection",
@@ -415,7 +420,7 @@ const plans = {
           {
             name: "BLUE",
             price: "₹4,999/year",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             features: [
               "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
               "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
@@ -428,7 +433,7 @@ const plans = {
           {
             name: "SAFFRON",
             price: "₹6,999/year",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             mostPopular: true,
             features: [
               "All Features of BLUE",
@@ -439,7 +444,7 @@ const plans = {
           {
             name: "EMERALD",
             price: "₹9,999/year",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             features: [
               "All Features of SAFFRON",
               "Data Security: Voucher/Master Approval & Rejection",
@@ -452,7 +457,7 @@ const plans = {
           {
             name: "BLUE",
             price: "₹12,499/year",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             features: [
               "Create Accounting Vouchers: Unlimited Invoices, Unlimited – Receipts, Inventory, JVs etc",
               "Billing / Invoicing: Digitally Sign Invoices & Reports*, Fully User-Configurable Invoicing",
@@ -465,7 +470,7 @@ const plans = {
           {
             name: "SAFFRON",
             price: "₹17,999/year",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             mostPopular: true,
             features: [
               "All Features of BLUE",
@@ -476,7 +481,7 @@ const plans = {
           {
             name: "EMERALD",
             price: "₹24,999/year",
-            buttonText: "Get Free Demo",
+            buttonText: "Contact Us",
             features: [
               "All Features of SAFFRON",
               "Data Security: Voucher/Master Approval & Rejection",
@@ -520,24 +525,24 @@ const plans = {
         annually: {
           price: "₹10,800",
           additionalCompany: "₹7,200",
-          buttonText: "Get Free Demo"
+          buttonText: "Contact Us"
         },
         quarterly: {
           price: "₹4,500",
           additionalCompany: "₹2,250",
-          buttonText: "Get Free Demo"
+          buttonText: "Contact Us"
         }
       },
       sql: {
         annually: {
           price: "₹16,800",
           additionalCompany: "₹13,200",
-          buttonText: "Get Free Demo"
+          buttonText: "Contact Us"
         },
         quarterly: {
           price: "₹5,250",
           additionalCompany: "₹3,750",
-          buttonText: "Get Free Demo"
+          buttonText: "Contact Us"
         }
       }
     },
@@ -921,7 +926,7 @@ const plans = {
       price: "$50",
       period: "/month",
       popular: false,
-      buttonText: "Start Free Trial",
+      buttonText: "Contact Us",
       buttonAction: handleTrial,
       features: [
         { name: "2 Virtual CPUs", included: true },
@@ -938,7 +943,7 @@ const plans = {
       price: "$100",
       period: "/month",
       popular: true,
-      buttonText: "Start Free Trial",
+      buttonText: "Contact Us",
       buttonAction: handleTrial,
       features: [
         { name: "4 Virtual CPUs", included: true },
@@ -955,7 +960,7 @@ const plans = {
       price: "$200",
       period: "/month",
       popular: false,
-      buttonText: "Contact Sales",
+      buttonText: "Contact Us",
       buttonAction: handleContactSales,
       features: [
         { name: "8 Virtual CPUs", included: true },
@@ -974,7 +979,7 @@ const plans = {
       oldPrice: "₹899",
       price: "₹749",
       priceDescription: "Price/Org/Month Billed Annually",
-      buttonText: "Start my free trial",
+      buttonText: "Contact Us",
       compare: true,
       features: [
         { name: "Everything in Free +", bold: true },
@@ -990,7 +995,7 @@ const plans = {
       oldPrice: "₹1,799",
       price: "₹1,499",
       priceDescription: "Price/Org/Month Billed Annually",
-      buttonText: "Start my free trial",
+      buttonText: "Contact Us",
       compare: true,
       mostPopular: true,
       features: [
@@ -1008,7 +1013,7 @@ const plans = {
       oldPrice: "₹3,599",
       price: "₹2,999",
       priceDescription: "Price/Org/Month Billed Annually",
-      buttonText: "Start my free trial",
+      buttonText: "Contact Us",
       compare: true,
       features: [
         { name: "Everything in Professional +", bold: true },
@@ -1025,7 +1030,7 @@ const plans = {
       oldPrice: "₹5,999",
       price: "₹4,999",
       priceDescription: "Price/Org/Month Billed Annually",
-      buttonText: "Start my free trial",
+      buttonText: "Contact Us",
       compare: true,
       features: [
         { name: "Everything in Premium +", bold: true },
@@ -1044,7 +1049,7 @@ const plans = {
       price: "$29",
       period: "/month",
       popular: false,
-      buttonText: "Start Free Trial",
+      buttonText: "Contact Us",
       buttonAction: handleTrial,
       features: [
         { name: "Core Features", included: true },
@@ -1061,7 +1066,7 @@ const plans = {
       price: "$99",
       period: "/month",
       popular: true,
-      buttonText: "Start Free Trial",
+      buttonText: "Contact Us",
       buttonAction: handleTrial,
       features: [
         { name: "All Features", included: true },
@@ -1078,7 +1083,7 @@ const plans = {
       price: "$299",
       period: "/month",
       popular: false,
-      buttonText: "Contact Sales",
+      buttonText: "Contact Us",
       buttonAction: handleContactSales,
       features: [
         { name: "All Features", included: true },
@@ -1103,16 +1108,26 @@ const featureIcon = (feature: string, idx: number) => {
   return <Check className="h-4 w-4 text-green-500" />;
 };
 
-const Pricing = ({ title, description, productName }: PricingProductProps) => {
+const Pricing = ({ title, description, productName, selectedTallyService: controlledTallyService, setSelectedTallyService: setControlledTallyService, selectedBusyCategory: controlledBusyCategory, setSelectedBusyCategory: setControlledBusyCategory }: PricingProductProps) => {
   const [selectedDuration, setSelectedDuration] = useState<TallyDuration>("1_month");
   const [busyTab, setBusyTab] = useState<BusyTab>("perpetual");
   const [busyUserType, setBusyUserType] = useState<BusyUserType>("single");
   const [zohoPlanGroup, setZohoPlanGroup] = useState<'starter' | 'beyond'>('starter');
   const [zohoBilling, setZohoBilling] = useState<'yearly' | 'monthly'>('yearly');
-  const [selectedTallyService, setSelectedTallyService] = useState<string>("new-products");
-  const [selectedBusyCategory, setSelectedBusyCategory] = useState<string>("desktop");
+  const [internalTallyService, setInternalTallyService] = useState<string>("new-products");
+  const [internalBusyCategory, setInternalBusyCategory] = useState<string>("desktop");
   const [busyOnlineType, setBusyOnlineType] = useState<'access' | 'sql'>('access');
   const [busyOnlineBilling, setBusyOnlineBilling] = useState<'annually' | 'quarterly'>('annually');
+
+  // Use controlled or internal state
+  const selectedTallyService = controlledTallyService !== undefined ? controlledTallyService : internalTallyService;
+  const setSelectedTallyService = setControlledTallyService !== undefined ? setControlledTallyService : setInternalTallyService;
+  const selectedBusyCategory = controlledBusyCategory !== undefined ? controlledBusyCategory : internalBusyCategory;
+  const setSelectedBusyCategory = setControlledBusyCategory !== undefined ? setControlledBusyCategory : setInternalBusyCategory;
+
+  // Debug logs
+  console.log('Pricing selectedTallyService:', selectedTallyService);
+  console.log('Pricing selectedBusyCategory:', selectedBusyCategory);
 
   let currentPlans: any[] = [];
   if (productName === 'zoho') {
@@ -1146,10 +1161,10 @@ const Pricing = ({ title, description, productName }: PricingProductProps) => {
     }
   } else if (productName === 'ms-azure') {
     return (
-      <section className="py-16 bg-gray-50">
+      <section className="py-5 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.h2 
-            className="font-bold text-3xl md:text-4xl mb-6"
+            className="font-bold text-3xl md:text-4xl mb-6 text-center"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -1158,7 +1173,7 @@ const Pricing = ({ title, description, productName }: PricingProductProps) => {
             {title}
           </motion.h2>
           <motion.p 
-            className="text-lg mb-8 max-w-3xl mx-auto"
+            className="text-lg mb-8 max-w-3xl mx-auto text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -1177,6 +1192,45 @@ const Pricing = ({ title, description, productName }: PricingProductProps) => {
               <Cloud className="h-5 w-5" />
               Open Azure Pricing Calculator
             </Button>
+          </div>
+        </div>
+      </section>
+    );
+  } else if (productName === 'agt-cloud') {
+    return (
+      <section id="pricing-section" className= "bg-gray-50">
+        <div className="container mx-auto px-4 flex flex-col items-center justify-center">
+          <motion.h2 
+            className="font-bold text-3xl md:text-4xl mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            {title}
+          </motion.h2>
+          <motion.p 
+            className="text-lg mb-8 max-w-3xl mx-auto text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            {description}
+          </motion.p>
+          <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center gap-6">
+            <p className="text-2xl font-bold text-gray-800 text-center">
+              Starting from <span className="text-red-600">₹5000</span> / month only
+            </p>
+            <a
+              href="https://wa.me/919558803148?text=Hi%2C%20I'm%20interested%20in%20AgtPrivateCloud%20product!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-red-600 hover:bg-red-400 text-white px-8 py-3 rounded-lg flex items-center gap-2"
+            >
+              Contact Us
+              <FaWhatsapp className="h-5 w-5" />
+            </a>
           </div>
         </div>
       </section>
@@ -1474,9 +1528,12 @@ const Pricing = ({ title, description, productName }: PricingProductProps) => {
 
                 {/* Button Section - Always at bottom, inside card */}
                 <div className="mt-6">
-                  <button className="w-full bg-red-600 text-white font-semibold py-2.5 rounded-lg shadow hover:bg-red-700 transition">
-                    {plan.buttonText || 'Get Started'}
-                  </button>
+                  <Link href="/contact">
+                    <button className="w-full bg-red-600 text-white font-semibold py-2.5 rounded-lg shadow hover:bg-red-700 transition flex items-center justify-center gap-2">
+                      <Phone className="h-4 w-4" />
+                      {plan.buttonText || 'Contact Us'}
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}

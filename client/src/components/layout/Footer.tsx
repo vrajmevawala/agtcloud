@@ -11,7 +11,7 @@ const Footer = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowAltNumber((prev) => !prev);
-    }, 2000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 

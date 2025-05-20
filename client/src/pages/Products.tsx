@@ -113,6 +113,11 @@ export default function Products() {
                             {service.slug == 'rental' && ' Flexible rental options for Tally software'}
                             {service.slug == 'virtual-user' && ' Virtual user solutions for remote access'}
 
+                            {service.slug === 'remote-access' && ' Remote Access and Web Application Portal for seamless business connectivity'}
+                            {service.slug === 'remote-support' && ' Remote Assistance and Screen Sharing for IT maintenance and support'}
+                            {service.slug === 'advanced-security' && ' Cybersecurity for Windows Servers and RDP infrastructure'}
+                            {service.slug === 'server-monitoring' && ' Monitoring and Reporting for Remote Servers and cloud infrastructure'}
+
                             {service.slug === 'desktop' && ' Experience Efficient Accounting on Desktop'}
                             {service.slug === 'mobile' && ' Manage business on your fingers'}
                             {service.slug === 'online' && ' Most secured accounting on the cloud'}

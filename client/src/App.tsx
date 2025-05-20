@@ -13,6 +13,7 @@ import { AnimatePresence } from "framer-motion";
 import { lazy, Suspense, useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
 import WhatsAppFloat from "@/components/ui/whatsapp-float";
+import { LoadingProvider } from "@/contexts/LoadingContext";
 
 // Lazy load less frequently accessed pages to improve initial load time
 const ContactPage = lazy(() => import("@/pages/Contact"));
@@ -77,23 +78,25 @@ function App() {
   }, []);
   
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        {loading ? (
-          <LoadingScreen />
-        ) : (
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow">
-              <Router />
-            </main>
-            <Footer />
-            <WhatsAppFloat />
-          </div>
-        )}
-      </TooltipProvider>
-    </QueryClientProvider>
+    <LoadingProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          {loading ? (
+            <LoadingScreen />
+          ) : (
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-grow">
+                <Router />
+              </main>
+              <Footer />
+              <WhatsAppFloat />
+            </div>
+          )}
+        </TooltipProvider>
+      </QueryClientProvider>
+    </LoadingProvider>
   );
 }
 

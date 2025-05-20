@@ -1459,7 +1459,7 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
     }
   } else if (productName === 'ms-azure') {
     return (
-      <section className="py-5 bg-gray-50">
+      <section id="azure-pricing" className="py-5 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.h2 
             className="font-bold text-3xl md:text-4xl mb-6 text-center"
@@ -1479,27 +1479,37 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
           >
             {description}
           </motion.p>
-          <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center justify-center gap-6">
+          {/* Add a div with id for calculator scroll target */}
+          <div id="azure-calculator" className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center justify-center gap-6">
             <p className="text-lg text-gray-700 text-center">
               Calculate your estimation with Azure Pricing Calculator
             </p>
-            <Button
-              onClick={handleAzureCalculator}
-              className="bg-red-600 hover:bg-red-400 text-white px-8 py-3 rounded-lg flex items-center gap-2"
-            >
-              <Cloud className="h-5 w-5" />
-              Open Azure Pricing Calculator
-            </Button>
+            <div className="flex flex-row gap-4 justify-center w-full">
+              <Button
+                onClick={handleAzureCalculator}
+                className="bg-red-600 hover:bg-red-400 text-white px-8 py-3 rounded-lg flex items-center gap-2"
+              >
+                <Cloud className="h-5 w-5" />
+                Open Azure Pricing Calculator
+              </Button>
+              <a
+                href="tel:+919558803148"
+                className="w-40 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-lg shadow flex items-center justify-center gap-2 transition"
+              >
+                <Phone className="h-5 w-5" />
+                Contact Us
+              </a>
+            </div>
           </div>
         </div>
       </section>
     );
   } else if (productName === 'agt-cloud') {
     return (
-      <section id="pricing-section" className= "bg-gray-50">
-        <div className="container mx-auto px-4 flex flex-col items-center justify-center">
+      <section id="pricing-section" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4">
           <motion.h2 
-            className="font-bold text-3xl md:text-4xl mb-6"
+            className="font-bold text-4xl md:text-5xl mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -1508,7 +1518,7 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
             {title}
           </motion.h2>
           <motion.p 
-            className="text-lg mb-8 max-w-3xl mx-auto text-center"
+            className="text-lg mb-12 max-w-3xl mx-auto text-center text-gray-600"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -1516,19 +1526,62 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
           >
             {description}
           </motion.p>
-          <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center gap-6">
-            <p className="text-2xl font-bold text-gray-800 text-center">
-              Starting from <span className="text-red-600">₹5000</span> / month only
-            </p>
-            <a
-              href="https://wa.me/919558803148?text=Hi%2C%20I'm%20interested%20in%20AgtPrivateCloud%20product!"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-red-600 hover:bg-red-400 text-white px-8 py-3 rounded-lg flex items-center gap-2"
-            >
-              Contact Us
-              <FaWhatsapp className="h-5 w-5" />
-            </a>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+
+              {/* Pricing Content */}
+              <div className="p-8 md:p-12">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
+                  <div className="text-center md:text-left">
+                    <p className="text-4xl font-bold text-gray-900 mb-2">
+                      Starting from <span className="text-red-600">₹5000</span>
+                    </p>
+                    <p className="text-gray-600">per month</p>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span>24/7 Technical Support</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span>99.9% Uptime Guarantee</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <Check className="h-5 w-5 text-green-500" />
+                      <span>Customizable Solutions</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Contact Section */}
+                <div className="bg-gray-50 rounded-xl p-6">
+                  <h4 className="text-xl font-semibold text-gray-900 mb-4 text-center">Get in Touch</h4>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a
+                      href="https://wa.me/919558803148?text=Hi%2C%20I'm%20interested%20in%20AgtPrivateCloud%20product!"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-48 flex items-center justify-center gap-2 px-8 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    >
+                      <FaWhatsapp className="h-6 w-6" />
+                      <span className="font-semibold"> WhatsApp</span>
+                    </a>
+                    <a
+                      href="tel:+919558803148"
+                      className="w-48 flex items-center justify-center gap-2 px-8 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    >
+                      <Phone className="h-6 w-6" />
+                      <span className="font-semibold">Call Us Now</span>
+                    </a>
+                  </div>
+                  <p className="text-center text-gray-600 mt-4">
+                    Our experts will help you choose the perfect plan for your business needs
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1907,12 +1960,27 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
 
                 {/* Button Section - Always at bottom, inside card */}
                 <div className="mt-6">
-                  <Link href="/contact">
-                    <button className="w-full bg-red-600 text-white font-semibold py-2.5 rounded-lg shadow hover:bg-red-700 transition flex items-center justify-center gap-2">
+                  {productName === "busy" ? (
+                    <a href="tel:912613117837" className="w-full bg-red-600 text-white font-semibold py-2.5 rounded-lg shadow hover:bg-red-700 transition flex items-center justify-center gap-2">
                       <Phone className="h-4 w-4" />
                       Contact Us
-                    </button>
-                  </Link>
+                    </a>
+                  ) : productName === "tally" ? (
+                    <a href="tel:9879793003" className="w-full bg-red-600 text-white font-semibold py-2.5 rounded-lg shadow hover:bg-red-700 transition flex items-center justify-center gap-2">
+                      <Phone className="h-4 w-4" />
+                      Contact Us
+                    </a>
+                  ) : productName === "agt-cloud" || productName === "ms-azure" || productName === "zoho" ? (
+                    <a href="tel:+919558803148" className="w-full bg-red-600 text-white font-semibold py-2.5 rounded-lg shadow hover:bg-red-700 transition flex items-center justify-center gap-2">
+                      <Phone className="h-4 w-4" />
+                      Contact Us
+                    </a>
+                  ) : (
+                    <a href="tel:+919558803148" className="w-full bg-red-600 text-white font-semibold py-2.5 rounded-lg shadow hover:bg-red-700 transition flex items-center justify-center gap-2">
+                      <Phone className="h-4 w-4" />
+                      Contact Us
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

@@ -19,6 +19,7 @@ import {
   Settings2,
   FileCheck2
 } from "lucide-react";
+import { useParams } from "wouter";
 
 interface Service {
   name: string;
@@ -153,11 +154,24 @@ const Features = ({ services, companyName, companyDescription, onServiceSelect, 
     "ms-dynamic-365"
   ];
 
+  const params = useParams();
+  const slug = params.slug;
+
   // Scroll handler
   const handleLearnMoreClick = (slug: string) => {
     if (!excludedSlugs.includes(slug) && onServiceSelect) {
       console.log('Learn More clicked for slug:', slug); // Debug
       onServiceSelect(slug);
+    }
+  };
+
+  // Scroll to calculator section for Azure only
+  const handleKnowPricingClick = () => {
+    const el = document.getElementById("azure-calculator");
+    if (el) {
+      const yOffset = -245; // Adjust this value as needed for your header height
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -260,7 +274,15 @@ const Features = ({ services, companyName, companyDescription, onServiceSelect, 
               </div>
               <h3 className="font-bold text-lg mb-2 text-center">{feature.title}</h3>
               <p className="text-gray-600 text-center mb-6">{feature.description}</p>
-              {feature.slug ? (
+              {/* Show Know Pricing button only for ms-azure */}
+              {slug === "ms-azure" ? (
+                <button
+                  className="mt-auto w-full bg-red-600 text-white py-2 rounded-md font-semibold hover:bg-red-700 transition"
+                  onClick={handleKnowPricingClick}
+                >
+                  Know Pricing
+                </button>
+              ) : feature.slug ? (
                 <button
                   className="mt-auto w-full bg-red-600 text-white py-2 rounded-md font-semibold hover:bg-red-700 transition"
                   onClick={() => feature.slug && handleLearnMoreClick(feature.slug)}

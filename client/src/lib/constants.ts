@@ -16,9 +16,9 @@ export const productCategories = [
     slug: "agt-cloud",
     services: [
       { name: "Remote Access", slug: "remote-access", description: "Remote Access and Web Application Portal for seamless business connectivity." },
-      { name: "Remote Support", slug: "remote-support", description: "Remote Assistance and Screen Sharing for IT maintenance and support." },
+      { name: "Bare Metal Server", slug: "bare-metal", description: "Dedicated physical server offering performance, security and full control." },
       { name: "Advanced Security", slug: "advanced-security", description: "Cybersecurity for Windows Servers and RDP infrastructure." },
-      { name: "Server Monitoring", slug: "server-monitoring", description: "Monitoring and Reporting for Remote Servers and cloud infrastructure." }
+      { name: "Server Management", slug: "server-management", description: "Ensures optimal performance, security, uptime and regular maintenance." }
     ]
   },
   {
@@ -35,14 +35,14 @@ export const productCategories = [
     name: "Busy Solutions",
     slug: "busy",
     services: [
-      { name: "Desktop", slug: "desktop", description: "Experience Efficient Accounting on Desktop" },
-      { name: "Mobile", slug: "mobile", description: "Manage business on your fingers" },
-      { name: "Online", slug: "online", description: "Most secured accounting on the cloud" },
-      { name: "Recom", slug: "recom", description: "Ecommerce reconciliation in 1 min" }
+      { name: "Desktop Software", slug: "desktop", description: "Experience Efficient Accounting on Desktop" },
+      { name: "Mobile App", slug: "mobile", description: "Manage business on your fingers" },
+      { name: "Online Services", slug: "online", description: "Most secured accounting on the cloud" },
+      { name: "Recom Plans Plug-In", slug: "recom", description: "Ecommerce reconciliation in 1 min" }
     ]
   },
   {
-    name: "Zoho",
+    name: "Zoho Solutions",
     slug: "zoho",
     services: [
       { name: "Zoho Books", slug: "books", description: "Online accounting made simple" },

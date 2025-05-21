@@ -111,7 +111,7 @@ const Hero = ({
   };
 
   return (
-    <section className="text-black pt-28 pb-10 md:pt-36 md:pb-16 lg:pt-40 lg:pb-24 min-h-[80vh] h-auto overflow-hidden relative">
+    <section className="text-black pt-28 pb-10 mt-10 md:mt-0 md:pt-36 md:pb-16 lg:pt-40 lg:pb-24 min-h-[80vh] h-auto overflow-hidden relative">
       <video
         autoPlay
         loop

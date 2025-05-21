@@ -1016,6 +1016,7 @@ const plans = {
         effective: "Effective price 4050/Month",
         gst: "+18% GST (₹ 8,748)",
         buyNow: true,
+        mostPopular: true,
         features: [
           "All features of TallyPrime Gold",
           "Unlimited users",
@@ -1099,6 +1100,7 @@ const plans = {
         price: "₹ 27,000",
         gst: "+18% GST (₹ 2,187)",
         buyNow: true,
+        mostPopular: true,
         features: [
           "Latest features",
           "Data migration",
@@ -1905,8 +1907,15 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
             {currentPlans.map((plan: any, index: number) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-lg border border-red-100 p-6 flex flex-col h-[560px] w-[320px] overflow-hidden transition-transform hover:scale-105 hover:shadow-2xl"
+                className="relative bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-lg border border-red-100 p-6 pt-10 flex flex-col h-[560px] w-[320px] overflow-visible transition-transform hover:scale-105 hover:shadow-2xl"
               >
+                {plan.mostPopular && (
+                  <div className="absolute left-1/2 top-0 z-30 -translate-x-1/2 -translate-y-1/2">
+                    <div className="bg-red-600 text-white text-xs font-bold px-6 py-1 rounded-full shadow-lg tracking-wider uppercase">
+                      MOST POPULAR
+                    </div>
+                  </div>
+                )}
                 {/* Content Wrapper */}
                 <div className="flex flex-col flex-1">
                   {/* Header Section */}

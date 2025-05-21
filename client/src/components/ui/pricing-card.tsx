@@ -52,33 +52,40 @@ export function PricingCard({
         "p-6 border-b",
         popular && "bg-gradient-to-r from-primary to-red-700 text-white"
       )}>
-        <h3 className="font-bold text-2xl mb-1">{name}</h3>
-        <p className={cn(
-          "text-gray-500 mb-4",
-          popular && "text-gray-100"
-        )}>
-          {description}
-        </p>
-        <div className="flex items-end mb-4">
-          <span className="font-bold text-4xl">{price}</span>
-          <span className={cn(
-            "text-gray-500 ml-1",
+        {popular && (
+          <div className="absolute top-0 left-0 w-full bg-primary text-white text-center py-1 text-sm font-semibold">
+            MOST POPULAR
+          </div>
+        )}
+        <div className={cn(popular && "mt-6")}>
+          <h3 className="font-bold text-2xl mb-1">{name}</h3>
+          <p className={cn(
+            "text-gray-500 mb-4",
             popular && "text-gray-100"
           )}>
-            {period}
-          </span>
+            {description}
+          </p>
+          <div className="flex items-end mb-4">
+            <span className="font-bold text-4xl">{price}</span>
+            <span className={cn(
+              "text-gray-500 ml-1",
+              popular && "text-gray-100"
+            )}>
+              {period}
+            </span>
+          </div>
+          <Button 
+            onClick={buttonAction}
+            className={cn(
+              "w-full",
+              popular 
+                ? "bg-white text-primary hover:bg-[#FFCC00] hover:text-gray-800" 
+                : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+            )}
+          >
+            {buttonText}
+          </Button>
         </div>
-        <Button 
-          onClick={buttonAction}
-          className={cn(
-            "w-full",
-            popular 
-              ? "bg-white text-primary hover:bg-[#FFCC00] hover:text-gray-800" 
-              : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-          )}
-        >
-          {buttonText}
-        </Button>
       </CardHeader>
       
       <CardContent className="p-6">

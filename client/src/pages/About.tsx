@@ -17,29 +17,29 @@ export default function About() {
       <div className="container mx-auto px-4">
 
          {/* Our Team */}
-         <h2 className="text-3xl text-decoration-line: underline decoration-red-500 font-bold text-center mb-6">Our Lead</h2>
-        <div className="flex flex-row items-center gap-20 justify-center">
-            <div className="relative z-10 flex flex-col items-center">
+         <h2 className="text-3xl text-decoration-line: underline decoration-red-500 font-bold text-center mb-6">Meet Our Founders</h2>
+         <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 px-4 py-8">
+          <div className="relative z-10 flex flex-col items-center">
             <img
               src={bihagImg}
               alt="Bihag Desai"
-              className="w-64 h-64 object-cover object-center rounded-full border-8 border-white shadow-xl mb-6"
-              style={{ marginTop: '2rem' }}
+              className="w-48 h-48 md:w-64 md:h-64 object-cover object-center rounded-full border-8 border-white shadow-xl mb-4 md:mb-6"
             />
-            <h2 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900 drop-shadow-lg">Bihag Desai</h2>
-            <p className="text-md font-semibold text-gray-700 mb-6">Director</p>
-            </div>
-            <div className="relative z-10 flex flex-col items-center">
+            <h2 className="text-xl md:text-3xl font-bold mb-1 md:mb-2 text-gray-900 drop-shadow-lg">Bihag Desai</h2>
+            <p className="text-sm md:text-md font-semibold text-gray-700 mb-4 md:mb-6">Director</p>
+          </div>
+
+          <div className="relative z-10 flex flex-col items-center">
             <img
               src={darshanImg}
               alt="Darshan Desai"
-              className="w-64 h-64 object-cover object-center rounded-full border-8 border-white shadow-xl mb-6"
-              style={{ marginTop: '2rem' }}
+              className="w-48 h-48 md:w-64 md:h-64 object-cover object-center rounded-full border-8 border-white shadow-xl mb-4 md:mb-6"
             />
-            <h2 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900 drop-shadow-lg">Darshan Desai</h2>
-            <p className="text-md font-semibold text-gray-700 mb-6">Director</p>
-            </div>
+            <h2 className="text-xl md:text-3xl font-bold mb-1 md:mb-2 text-gray-900 drop-shadow-lg">Darshan Desai</h2>
+            <p className="text-sm md:text-md font-semibold text-gray-700 mb-4 md:mb-6">Director</p>
+          </div>
         </div>
+
         <div className="flex flex-row items-center gap-20 justify-center mb-24">
         <div className="relative z-10 flex flex-col items-center">
             <p className="text-gray-700 max-w-2xl text-center text-s">

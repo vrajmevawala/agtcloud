@@ -1,6 +1,6 @@
 import { ProductCard } from "@/components/ui/product-card";
 import { motion } from "framer-motion";
-import { Database, Calculator, Cloud, BarChart } from "lucide-react";
+import { Database, Calculator, Cloud, BarChart, CloudCogIcon, Server } from "lucide-react";
 
 const Products = () => {
   const containerVariants = {
@@ -30,15 +30,21 @@ const Products = () => {
       link: "/product/tally"
     },
     {
+      title: "AGT Cloud",
+      description: "Complete business solution for accounting, inventory management, and GST compliance.",
+      icon: <CloudCogIcon className="h-8 w-8 text-primary" />,
+      link: "/product/agt-cloud"
+    },
+    {
       title: "MS Azure",
       description: "Flexible cloud platform for building, testing, deploying, and managing applications.",
-      icon: <Cloud className="h-8 w-8 text-primary" />,
+      icon: <Calculator className="h-8 w-8 text-primary" />,
       link: "/product/ms-azure"
     },
     {
       title: "Busy Solutions",
       description: "Comprehensive accounting and inventory management software for businesses of all sizes.",
-      icon: <Calculator className="h-8 w-8 text-primary" />,
+      icon: <Server className="h-8 w-8 text-primary" />,
       link: "/product/busy"
     },
     {

@@ -77,14 +77,15 @@ const Products = () => {
         </motion.div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10"
+          className="flex flex-row gap-6 overflow-x-auto pb-4 lg:justify-center lg:overflow-x-visible"
+          style={{ WebkitOverflowScrolling: 'touch' }}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {products.map((product, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <motion.div key={index} variants={itemVariants} className="min-w-[250px] max-w-[270px] flex-shrink-0">
               <ProductCard 
                 title={product.title}
                 description={product.description}

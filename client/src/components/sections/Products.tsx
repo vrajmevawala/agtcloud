@@ -42,7 +42,7 @@ const Products = () => {
       link: "/product/busy"
     },
     {
-      title: "Zoho",
+      title: "Zoho Solutions",
       description: "Integrated suite of business applications for sales, marketing, support, and operations.",
       icon: <BarChart className="h-8 w-8 text-primary" />,
       link: "/product/zoho"

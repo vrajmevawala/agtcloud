@@ -79,16 +79,13 @@ const Footer = () => {
             </div>
             {/* App Links */}
             <span className="mt-6 gap-2">
-              <span className="text-sm text-gray-400 font-bold">Download App:</span>
-              <span className="text-sm text-gray-400 mt-2"> AGT Events for Attendees</span>
-
-
+              <span className="text-sm text-gray-400 font-bold">Download Apps</span>
               <div className="flex space-x-4 mt-3">
-                <a href="https://play.google.com/store/apps/details?id=com.agt.eventattendees&hl=en_IN" target="_blank" rel="noopener noreferrer" aria-label="Google Play Store" className="bg-gray-800 hover:bg-primary/80 transition-colors duration-300 cursor-pointer h-10 w-32 flex items-center justify-center rounded-lg border border-gray-700 hover:border-primary">
+                <a href="https://play.google.com/store/apps/developer?id=AccessGlobal&hl=en_IN " target="_blank" rel="noopener noreferrer" aria-label="Google Play Store" className="bg-gray-800 hover:bg-primary/80 transition-colors duration-300 cursor-pointer h-10 w-32 flex items-center justify-center rounded-lg border border-gray-700 hover:border-primary">
                   <FaGooglePlay className="h-6 w-6 mr-2" />
                   <span className="text-xs text-white font-semibold">Play Store</span>
                 </a>
-                <a href="https://apps.apple.com/in/app/agt-event-for-attendees/id6504627862" target="_blank" rel="noopener noreferrer" aria-label="Apple App Store" className="bg-gray-800 hover:bg-primary/80 transition-colors duration-300 cursor-pointer h-10 w-32 flex items-center justify-center rounded-lg border border-gray-700 hover:border-primary">
+                <a href="https://apps.apple.com/us/developer/accessglobal-technology-private-limited/id1753097361" target="_blank" rel="noopener noreferrer" aria-label="Apple App Store" className="bg-gray-800 hover:bg-primary/80 transition-colors duration-300 cursor-pointer h-10 w-32 flex items-center justify-center rounded-lg border border-gray-700 hover:border-primary">
                   <FaApple className="h-6 w-6 mr-2" />
                   <span className="text-xs text-white font-semibold">App Store</span>
                 </a>

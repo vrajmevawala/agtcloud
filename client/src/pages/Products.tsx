@@ -90,7 +90,7 @@ export default function Products() {
                   <Badge variant="outline" className="text-primary border-primary mb-4">
                     {category.name}
                   </Badge>
-                  <h2 className="text-3xl font-bold mb-6">{category.name} Solutions</h2>
+                  <h2 className="text-3xl font-bold mb-6">{category.name}</h2>
                   <p className="text-gray-600 mb-8 text-lg">
                     {category.slug === 'busy' && 'A comprehensive business accounting software that simplifies financial management for SMEs with powerful features for GST, inventory, and payroll. (Busy Solutions)'}
                     {category.slug === 'tally' && 'The industry-standard accounting solution trusted by millions of businesses for its reliability, security, and comprehensive financial management capabilities. (Tally Solutions)'}

@@ -45,7 +45,7 @@ const zohoPricing = {
       {
         name: 'Standard',
         description: 'Efficiently organize your transactions, accounts, reports, and books',
-        oldPrice: '₹899',
+        // oldPrice: '₹899',
         price: '₹749',
         priceDescription: 'Price/Org/Month Billed Annually',
         buttonText: 'Contact Us',
@@ -61,7 +61,7 @@ const zohoPricing = {
       {
         name: 'Professional',
         description: 'Confidently take on projects, track your inventory, and handle purchases',
-        oldPrice: '₹1,799',
+        // oldPrice: '₹1,799',
         price: '₹1,499',
         priceDescription: 'Price/Org/Month Billed Annually',
         buttonText: 'Contact Us',
@@ -79,7 +79,7 @@ const zohoPricing = {
       {
         name: 'Premium',
         description: 'Enhanced customization and automation to streamline business processes',
-        oldPrice: '₹3,599',
+        // oldPrice: '₹3,599',
         price: '₹2,999',
         priceDescription: 'Price/Org/Month Billed Annually',
         buttonText: 'Contact Us',
@@ -96,7 +96,7 @@ const zohoPricing = {
       {
         name: 'Elite',
         description: 'Advanced accounting bundled with full-fledged inventory management',
-        oldPrice: '₹5,999',
+        // oldPrice: '₹5,999',
         price: '₹4,999',
         priceDescription: 'Price/Org/Month Billed Annually',
         buttonText: 'Contact Us',
@@ -115,7 +115,7 @@ const zohoPricing = {
       {
         name: 'Standard',
         description: 'Efficiently organize your transactions, accounts, reports, and books',
-        oldPrice: '₹899',
+        // oldPrice: '₹899',
         price: '₹899',
         priceDescription: 'Price/Org/Month',
         buttonText: 'Contact Us',
@@ -131,7 +131,7 @@ const zohoPricing = {
       {
         name: 'Professional',
         description: 'Confidently take on projects, track your inventory, and handle purchases',
-        oldPrice: '₹1,799',
+        // oldPrice: '₹1,799',
         price: '₹1,799',
         priceDescription: 'Price/Org/Month',
         buttonText: 'Contact Us',
@@ -149,7 +149,7 @@ const zohoPricing = {
       {
         name: 'Premium',
         description: 'Enhanced customization and automation to streamline business processes',
-        oldPrice: '₹3,599',
+        // oldPrice: '₹3,599',
         price: '₹3,599',
         priceDescription: 'Price/Org/Month',
         buttonText: 'Contact Us',
@@ -166,7 +166,7 @@ const zohoPricing = {
       {
         name: 'Elite',
         description: 'Advanced accounting bundled with full-fledged inventory management',
-        oldPrice: '₹5,999',
+        // oldPrice: '₹5,999',
         price: '₹5,999',
         priceDescription: 'Price/Org/Month',
         buttonText: 'Contact Us',
@@ -187,7 +187,7 @@ const zohoPricing = {
       {
         name: 'Professional',
         description: 'Confidently take on projects, track your inventory, and handle purchases',
-        oldPrice: '₹1,799',
+        // oldPrice: '₹1,799',
         price: '₹1,499',
         priceDescription: 'Price/Org/Month Billed Annually',
         buttonText: 'Contact Us',
@@ -205,7 +205,7 @@ const zohoPricing = {
       {
         name: 'Premium',
         description: 'Enhanced customization and automation to streamline business processes',
-        oldPrice: '₹3,599',
+        // oldPrice: '₹3,599',
         price: '₹2,999',
         priceDescription: 'Price/Org/Month Billed Annually',
         buttonText: 'Contact Us',
@@ -222,7 +222,7 @@ const zohoPricing = {
       {
         name: 'Elite',
         description: 'Advanced accounting bundled with full-fledged inventory management',
-        oldPrice: '₹5,999',
+        // oldPrice: '₹5,999',
         price: '₹4,999',
         priceDescription: 'Price/Org/Month Billed Annually',
         buttonText: 'Contact Us',
@@ -239,7 +239,7 @@ const zohoPricing = {
       {
         name: 'Ultimate',
         description: 'Gain deeper insights with advanced business intelligence capabilities',
-        oldPrice: '₹9,599',
+        // oldPrice: '₹9,599',
         price: '₹7,999',
         priceDescription: 'Price/Org/Month Billed Annually',
         buttonText: 'Contact Us',
@@ -257,7 +257,7 @@ const zohoPricing = {
       {
         name: 'Professional',
         description: 'Confidently take on projects, track your inventory, and handle purchases',
-        oldPrice: '₹1,799',
+        // oldPrice: '₹1,799',
         price: '₹1,799',
         priceDescription: 'Price/Org/Month',
         buttonText: 'Contact Us',
@@ -275,7 +275,7 @@ const zohoPricing = {
       {
         name: 'Premium',
         description: 'Enhanced customization and automation to streamline business processes',
-        oldPrice: '₹3,599',
+        // oldPrice: '₹3,599',
         price: '₹3,599',
         priceDescription: 'Price/Org/Month',
         buttonText: 'Contact Us',
@@ -309,7 +309,7 @@ const zohoPricing = {
       {
         name: 'Ultimate',
         description: 'Gain deeper insights with advanced business intelligence capabilities',
-        oldPrice: '₹9,599',
+        // oldPrice: '₹9,599',
         price: '₹9,599',
         priceDescription: 'Price/Org/Month',
         buttonText: 'Contact Us',
@@ -971,9 +971,9 @@ const plans = {
         name: "TallyPrime Silver",
         description: "Suitable for businesses that need TallyPrime on a single PC",
         price: "₹ 22,500",
-        oldPrice: "₹ 18,000",
+        // oldPrice: "₹ 18,000",
         discount: "Get 10% off",
-        effective: "Effective price 675/Month",
+        // effective: "Effective price 675/Month",
         gst: "+18% GST (₹ 1,458)",
         buyNow: true,
         features: [
@@ -991,9 +991,9 @@ const plans = {
         name: "TallyPrime Gold",
         description: "Perfect for businesses needing multi-user access on multiple PCs",
         price: "₹ 67,500",
-        oldPrice: "₹ 54,000",
+        // oldPrice: "₹ 54,000",
         discount: "Get 10% off",
-        effective: "Effective price 2025/Month",
+        // effective: "Effective price 2025/Month",
         gst: "+18% GST (₹ 4,374)",
         buyNow: true,
         features: [
@@ -1011,9 +1011,9 @@ const plans = {
         name: "TallyPrime Server",
         description: "Enterprise-grade solution for large organizations",
         price: "₹ 2,70,000",
-        oldPrice: "₹ 2,70,000",
+        // oldPrice: "₹ 2,70,000",
         discount: "Get 10% off",
-        effective: "Effective price 4050/Month",
+        // effective: "Effective price 4050/Month",
         gst: "+18% GST (₹ 8,748)",
         buyNow: true,
         mostPopular: true,
@@ -1256,7 +1256,7 @@ const plans = {
     {
       name: "Standard",
       description: "Efficiently organize your transactions, accounts, reports, and books",
-      oldPrice: "₹899",
+      // oldPrice: "₹899",
       price: "₹749",
       priceDescription: "Price/Org/Month Billed Annually",
       buttonText: "Contact Us",
@@ -1272,7 +1272,7 @@ const plans = {
     {
       name: "Professional",
       description: "Confidently take on projects, track your inventory, and handle purchases",
-      oldPrice: "₹1,799",
+      // oldPrice: "₹1,799",
       price: "₹1,499",
       priceDescription: "Price/Org/Month Billed Annually",
       buttonText: "Contact Us",
@@ -1290,7 +1290,7 @@ const plans = {
     {
       name: "Premium",
       description: "Enhanced customization and automation to streamline business processes",
-      oldPrice: "₹3,599",
+      // oldPrice: "₹3,599",
       price: "₹2,999",
       priceDescription: "Price/Org/Month Billed Annually",
       buttonText: "Contact Us",
@@ -1307,7 +1307,7 @@ const plans = {
     {
       name: "Elite",
       description: "Advanced accounting bundled with full-fledged inventory management",
-      oldPrice: "₹5,999",
+      // oldPrice: "₹5,999",
       price: "₹4,999",
       priceDescription: "Price/Org/Month Billed Annually",
       buttonText: "Contact Us",
@@ -1319,59 +1319,6 @@ const plans = {
         { name: "Manage warehouses", included: true },
         { name: "Composite items", included: true },
         { name: "Track serial numbers", included: true },
-      ]
-    }
-  ],
-  default: [
-    {
-      name: "Starter",
-      description: "For individuals",
-      price: "$29",
-      period: "/month",
-      popular: false,
-      buttonText: "Contact Us",
-      buttonAction: handleTrial,
-      features: [
-        { name: "Core Features", included: true },
-        { name: "Limited Storage", included: true },
-        { name: "Basic Support", included: true },
-        { name: "2 Projects", included: true },
-        { name: "Advanced Tools", included: false },
-        { name: "API Access", included: false },
-      ]
-    },
-    {
-      name: "Professional",
-      description: "For small teams",
-      price: "$99",
-      period: "/month",
-      popular: true,
-      buttonText: "Contact Us",
-      buttonAction: handleTrial,
-      features: [
-        { name: "All Features", included: true },
-        { name: "Unlimited Storage", included: true },
-        { name: "Priority Support", included: true },
-        { name: "10 Projects", included: true },
-        { name: "Advanced Tools", included: true },
-        { name: "API Access", included: true },
-      ]
-    },
-    {
-      name: "Enterprise",
-      description: "For large teams",
-      price: "$299",
-      period: "/month",
-      popular: false,
-      buttonText: "Contact Us",
-      buttonAction: handleContactSales,
-      features: [
-        { name: "All Features", included: true },
-        { name: "Unlimited Storage", included: true },
-        { name: "Dedicated Support", included: true },
-        { name: "Unlimited Projects", included: true },
-        { name: "Advanced Tools", included: true },
-        { name: "API Access", included: true },
       ]
     }
   ]
@@ -1589,7 +1536,7 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
       </section>
     );
   } else {
-    const arr = plans[productName as keyof typeof plans] || plans.default;
+    const arr = plans[productName as keyof typeof plans];
     currentPlans = Array.isArray(arr) ? arr : [];
   }
 

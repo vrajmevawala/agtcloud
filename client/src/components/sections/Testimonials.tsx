@@ -19,10 +19,10 @@ const Testimonials = () => {
     },
     {
       quote: "Best place for all your IT hardware and software need. Prompt and efficient service Also have qualified team to help you on the go for any of your systems requirements.",
-      author: "Safal Pandya",
+      author: "Darshan Pandya",
       role: "customer",
       rating: 4.5,
-      initials: "SP"
+      initials: "DP"
     }
   ];
 

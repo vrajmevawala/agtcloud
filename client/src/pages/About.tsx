@@ -20,21 +20,25 @@ export default function About() {
          <h2 className="text-3xl text-decoration-line: underline decoration-red-500 font-bold text-center mb-6">Meet Our Founders</h2>
          <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 px-4 py-8">
           <div className="relative z-10 flex flex-col items-center">
-            <img
-              src={bihagImg}
-              alt="Bihag Desai"
-              className="w-48 h-48 md:w-64 md:h-64 object-cover object-center rounded-full border-8 border-white shadow-xl mb-4 md:mb-6"
-            />
+            <a href="https://www.linkedin.com/in/bihagdesai/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-80 transition-opacity duration-300">
+              <img
+                src={bihagImg}
+                alt="Bihag Desai"
+                className="w-48 h-48 md:w-64 md:h-64 object-cover object-center rounded-full border-8 border-white shadow-xl mb-4 md:mb-6"
+              />
+            </a>
             <h2 className="text-xl md:text-3xl font-bold mb-1 md:mb-2 text-gray-900 drop-shadow-lg">Bihag Desai</h2>
             <p className="text-sm md:text-md font-semibold text-gray-700 mb-4 md:mb-6">Director</p>
           </div>
 
           <div className="relative z-10 flex flex-col items-center">
+          <a href="https://www.linkedin.com/company/agtplin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-80 transition-opacity duration-300">
             <img
               src={darshanImg}
               alt="Darshan Desai"
               className="w-48 h-48 md:w-64 md:h-64 object-cover object-center rounded-full border-8 border-white shadow-xl mb-4 md:mb-6"
             />
+            </a>
             <h2 className="text-xl md:text-3xl font-bold mb-1 md:mb-2 text-gray-900 drop-shadow-lg">Darshan Desai</h2>
             <p className="text-sm md:text-md font-semibold text-gray-700 mb-4 md:mb-6">Director</p>
           </div>

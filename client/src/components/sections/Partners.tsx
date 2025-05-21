@@ -1,44 +1,17 @@
 import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/animations";
 import busyLogo from "@/assets/partners/busy.jpg";
-import dellLogo from "@/assets/partners/dell.png";
-import godaddyLogo from "@/assets/partners/godaddy.png";
-import sandiskLogo from "@/assets/partners/sandisk.png.png";
-import appleLogo from "@/assets/partners/apple.png";
-import acerLogo from "@/assets/partners/acer.png";
-import sonyLogo from "@/assets/partners/sony.png";
-import dlinkLogo from "@/assets/partners/dlink.png";
-import asusLogo from "@/assets/partners/asus.png";
-import panasonicLogo from "@/assets/partners/panasonic.png";
 import zohoLogo from "@/assets/partners/zoho.png";
-import ciscoLogo from "@/assets/partners/cisco.png";
-import hikvisionLogo from "@/assets/partners/hikvision.png";
-import lenovoLogo from "@/assets/partners/lenovo.png";
-import hpLogo from "@/assets/partners/hp.png";
-import epsonLogo from "@/assets/partners/epson.png";
-import lgLogo from "@/assets/partners/lg.png";
+import azureLogo from "@/assets/partners/Azure.png";
 import tallyLogo from "@/assets/partners/tally-logo.png";
+import microsoftLogo from "@/assets/partners/microsoft.png";
 
 // Partner logos
 const partners = [
   { name: "Busy Solutions", logo: busyLogo },
-  { name: "Dell", logo: dellLogo },
-  { name: "GoDaddy", logo: godaddyLogo },
-  { name: "SanDisk", logo: sandiskLogo },
-  { name: "Apple", logo: appleLogo },
-  { name: "Acer", logo: acerLogo },
-  { name: "Sony", logo: sonyLogo },
-  { name: "D-Link", logo: dlinkLogo },
-  { name: "Asus", logo: asusLogo },
-  { name: "Panasonic", logo: panasonicLogo },
+  { name: "Azure", logo: azureLogo },
   { name: "Zoho", logo: zohoLogo },
-  { name: "Cisco", logo: ciscoLogo },
-  { name: "Hikvision", logo: hikvisionLogo },
-  { name: "Lenovo", logo: lenovoLogo },
-  { name: "HP", logo: hpLogo },
-  { name: "Epson", logo: epsonLogo },
-  { name: "LG", logo: lgLogo },
   { name: "Tally Solutions", logo: tallyLogo },
+  { name: "Microsoft", logo: microsoftLogo },
 ];
 
 const Partners = () => {
@@ -64,7 +37,7 @@ const Partners = () => {
         <div className="overflow-hidden whitespace-nowrap group">
           <div className="inline-block animate-marquee group-hover:[animation-play-state:paused]">
             {partners.concat(partners).map((partner, idx) => (
-              <span key={idx} className="mx-12 inline-flex items-center justify-center">
+              <span key={idx} className="mx-20 inline-flex items-center justify-center">
                 <img
                   src={partner.logo}
                   alt={partner.name}

@@ -222,9 +222,9 @@ const zohoPricing = {
       {
         name: 'Elite',
         description: 'Advanced accounting bundled with full-fledged inventory management',
-        // oldPrice: '₹5,999',
-        price: '₹4,999',
-        priceDescription: 'Price/Org/Month Billed Annually',
+        //oldPrice: '₹5,999',
+        price: '₹5,999',
+        priceDescription: 'Price/Org/Month',
         buttonText: 'Contact Us',
         compare: true,
         features: [
@@ -240,8 +240,8 @@ const zohoPricing = {
         name: 'Ultimate',
         description: 'Gain deeper insights with advanced business intelligence capabilities',
         // oldPrice: '₹9,599',
-        price: '₹7,999',
-        priceDescription: 'Price/Org/Month Billed Annually',
+        price: '₹9,599',
+        priceDescription: 'Price/Org/Month',
         buttonText: 'Contact Us',
         compare: true,
         features: [
@@ -292,7 +292,7 @@ const zohoPricing = {
       {
         name: 'Elite',
         description: 'Advanced accounting bundled with full-fledged inventory management',
-        oldPrice: '₹5,999',
+        //oldPrice: '₹5,999',
         price: '₹5,999',
         priceDescription: 'Price/Org/Month',
         buttonText: 'Contact Us',
@@ -973,8 +973,7 @@ const plans = {
         price: "₹ 22,500",
         // oldPrice: "₹ 18,000",
         discount: "Get 10% off",
-        // effective: "Effective price 675/Month",
-        gst: "+18% GST (₹ 1,458)",
+        showGst: true,
         buyNow: true,
         features: [
           "Fully loaded with all Features",
@@ -993,8 +992,7 @@ const plans = {
         price: "₹ 67,500",
         // oldPrice: "₹ 54,000",
         discount: "Get 10% off",
-        // effective: "Effective price 2025/Month",
-        gst: "+18% GST (₹ 4,374)",
+        showGst: true,
         buyNow: true,
         features: [
           "Fully loaded with all Features",
@@ -1013,8 +1011,7 @@ const plans = {
         price: "₹ 2,70,000",
         // oldPrice: "₹ 2,70,000",
         discount: "Get 10% off",
-        // effective: "Effective price 4050/Month",
-        gst: "+18% GST (₹ 8,748)",
+        showGst: true,
         buyNow: true,
         mostPopular: true,
         features: [
@@ -1034,7 +1031,7 @@ const plans = {
         name: "Tally Software Services - Silver",
         description: "Basic software services package",
         price: "₹ 4,500",
-        gst: "+18% GST (₹ 900)",
+        showGst: true,
         buyNow: true,
         features: [
           "Basic installation support",
@@ -1049,7 +1046,7 @@ const plans = {
         name: "Tally Software Services - Gold",
         description: "Comprehensive software services package",
         price: "₹ 13,500",
-        gst: "+18% GST (₹ 1,800)",
+        showGst: true,
         buyNow: true,
         features: [
           "Priority installation support",
@@ -1066,7 +1063,7 @@ const plans = {
         name: "Tally Software Services - Auditors Edition",
         description: "Specialized services for auditors",
         price: "₹ 6,750",
-        gst: "+18% GST (₹ 2,700)",
+        showGst: true,
         buyNow: true,
         features: [
           "All Gold features",
@@ -1084,7 +1081,7 @@ const plans = {
         name: "Pre Tally.ERP 9 Silver to TallyPrime Silver",
         description: "Upgrade to TallyPrime Silver",
         price: "₹ 9,000",
-        gst: "+18% GST (₹ 729)",
+        showGst: true,
         buyNow: true,
         features: [
           "Latest features",
@@ -1098,7 +1095,7 @@ const plans = {
         name: "Pre Tally.ERP 9 Gold to TallyPrime Gold",
         description: "Upgrade to TallyPrime Gold",
         price: "₹ 27,000",
-        gst: "+18% GST (₹ 2,187)",
+        showGst: true,
         buyNow: true,
         mostPopular: true,
         features: [
@@ -1113,7 +1110,7 @@ const plans = {
         name: "Pre Tally.ERP 9 Silver to TallyPrime Gold",
         description: "Upgrade to TallyPrime Gold",
         price: "₹ 4,95,000",
-        gst: "+18% GST (₹ 2,916)",
+        showGst: true,
         buyNow: true,
         features: [
           "Multi-user access",
@@ -1127,7 +1124,7 @@ const plans = {
         name: "TallyPrime Silver to TallyPrime Gold",
         description: "Upgrade from Prime Silver to Prime Gold",
         price: "₹ 45,000",
-        gst: "+18% GST (₹ 2,916)",
+        showGst: true,
         buyNow: true,
         features: [
           "Multi-user access",
@@ -1143,7 +1140,7 @@ const plans = {
         name: "TallyPrime Silver",
         description: "Monthly Rental",
         price: "₹ 750",
-        gst: "+18% GST (₹ 135)",
+        showGst: true,
         buyNow: true,
         features: [
           "Single user access",
@@ -1157,7 +1154,7 @@ const plans = {
         name: "TallyPrime Gold",
         description: "Monthly Rental",
         price: "₹ 2,250",
-        gst: "+18% GST (₹ 405)",
+        showGst: true,
         buyNow: true,
         features: [
           "Multi-user access",
@@ -1171,7 +1168,7 @@ const plans = {
         name: "Shopper 9 Diamond",
         description: "Monthly Rental",
         price: "₹ 1,500",
-        gst: "+18% GST (₹ 270)",
+        showGst: true,
         buyNow: true,
         features: [
           "Retail-specific features",
@@ -1187,7 +1184,7 @@ const plans = {
         name: "Tally Virtual User",
         description: "Virtual user solution for remote access",
         price: "₹ 1,200",
-        gst: "+18% GST (₹ 270)",
+        showGst: true,
         buyNow: true,
         features: [
           "Remote access",
@@ -1341,6 +1338,17 @@ const zohoProducts = [
   { key: 'mail', label: 'Zoho Mail' },
   { key: 'zohoone', label: 'Zoho One' },
 ];
+
+// Utility function to extract numeric value from price string and calculate GST
+function calculateGst(price: string): string | null {
+  // Remove non-numeric characters except dot and comma
+  const match = price.replace(/,/g, '').match(/\d+(\.\d+)?/);
+  if (!match) return null;
+  const amount = parseFloat(match[0]);
+  if (isNaN(amount)) return null;
+  const gst = Math.round(amount * 0.18);
+  return `+18% GST (₹ ${gst.toLocaleString()})`;
+}
 
 const Pricing = ({ title, description, productName, selectedTallyService: controlledTallyService, setSelectedTallyService: setControlledTallyService, selectedBusyCategory: controlledBusyCategory, setSelectedBusyCategory: setControlledBusyCategory, selectedZohoProduct: controlledZohoProduct, setSelectedZohoProduct: setControlledZohoProduct }: PricingProductProps) => {
   const [selectedDuration, setSelectedDuration] = useState<TallyDuration>("1_month");
@@ -1891,8 +1899,8 @@ const Pricing = ({ title, description, productName, selectedTallyService: contro
                     {plan.effective && (
                       <span className="text-sm text-red-600 block mt-1">{plan.effective}</span>
                     )}
-                    {plan.gst && (
-                      <span className="text-sm text-gray-500 block mt-1">{plan.gst}</span>
+                    {plan.showGst && plan.price && calculateGst(plan.price) && (
+                      <span className="text-sm text-gray-500 block mt-1">{calculateGst(plan.price)}</span>
                     )}
                   </div>
 

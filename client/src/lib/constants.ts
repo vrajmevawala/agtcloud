@@ -3,12 +3,14 @@ export const productCategories = [
     name: "Tally Solutions",
     slug: "tally",
     services: [
-      { name: "Tally on AWS", slug: "aws", description: "Run TallyPrime on Amazon Web Services" },
-      { name: "New Products", slug: "new-products", description: "Latest Tally products and solutions" },
-      { name: "Renew", slug: "software-services", description: "Professional software services" },
-      { name: "Upgrades", slug: "upgrades", description: "Upgrade your existing Tally installation" },
-      { name: "Tally Rental", slug: "rental", description: "Flexible rental options for Tally software" },
-      { name: "Tally Virtual User", slug: "virtual-user", description: "Virtual user solutions for remote access" }
+      { name: "TallyPrime", slug: "prime", description: "Accounting, inventory, e-Invoicing, and more - All in one software" },
+      { name: "Renew", slug: "software-services", description: "Unlock the latest features, enhancement and online services" },
+      { name: "Upgrades", slug: "upgrades", description: "Unlocks powerful collabration and efficiency for growing businesses" },
+      { name: "TallyPrime Server", slug: "virtual-user", description: "" },
+      { name: "Tally on Cloud", slug: "cloud", description: "TallyPrime and your business data anytime, anywhere with multiple users"},
+      { name: "Tally with Whatsapp", slug: "whatsapp", description: "Seamlessly share invoices, orders and other documents instantly via WhatsApp" },
+      { name: "Tally Rental", slug: "rental", description: "Experience the full power of TallyPrime with low cost rental plans" }
+
     ]
   },
   {

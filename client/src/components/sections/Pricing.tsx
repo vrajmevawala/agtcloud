@@ -880,7 +880,7 @@ const plans = {
     ]
   },
   tally: {
-    "aws": [
+    "cloud": [
       {
         name: "Personal Pack",
         description: "1 user, 2 vCPU, 4GB RAM, 5GB storage, 5GB backup, Unlimited hours",
@@ -912,7 +912,7 @@ const plans = {
       {
         name: "Regular Plus Pack",
         description: "4 users, 2 vCPU, 8GB RAM, 10GB storage, 10GB backup, Unlimited hours",
-        price: "₹600",
+        price: "₹450",
         features: [
           "4 users allowed",
           "2 Virtual CPUs",
@@ -926,7 +926,7 @@ const plans = {
       {
         name: "Regular Pro Pack",
         description: "8 users, 4 vCPU, 16GB RAM, 20GB storage, 20GB backup, Unlimited hours",
-        price: "₹600",
+        price: "₹450",
         features: [
           "8 users allowed",
           "4 Virtual CPUs",
@@ -966,7 +966,7 @@ const plans = {
         ]
       }
     ],
-    "new-products": [
+    "prime": [
       {
         name: "TallyPrime Silver",
         description: "Suitable for businesses that need TallyPrime on a single PC",
@@ -1077,39 +1077,40 @@ const plans = {
       }
     ],
     "upgrades": [
+      // {
+      //   name: "Pre Tally.ERP 9 Silver to TallyPrime Silver",
+      //   description: "Upgrade to TallyPrime Silver",
+      //   price: "₹ 9,000",
+      //   showGst: true,
+      //   buyNow: true,
+      //   features: [
+      //     "Latest features",
+      //     "Data migration",
+      //     "Basic training",
+      //     "Email support",
+      //     "Software updates"
+      //   ]
+      // },
+      // {
+      //   name: "Pre Tally.ERP 9 Gold to TallyPrime Gold",
+      //   description: "Upgrade to TallyPrime Gold",
+      //   price: "₹ 27,000",
+      //   showGst: true,
+      //   buyNow: true,
+      //   mostPopular: true,
+      //   features: [
+      //     "Latest features",
+      //     "Data migration",
+      //     "Advanced training",
+      //     "Priority support",
+      //     "Software updates"
+      //   ]
+      // },
+      
       {
-        name: "Pre Tally.ERP 9 Silver to TallyPrime Silver",
-        description: "Upgrade to TallyPrime Silver",
-        price: "₹ 9,000",
-        showGst: true,
-        buyNow: true,
-        features: [
-          "Latest features",
-          "Data migration",
-          "Basic training",
-          "Email support",
-          "Software updates"
-        ]
-      },
-      {
-        name: "Pre Tally.ERP 9 Gold to TallyPrime Gold",
-        description: "Upgrade to TallyPrime Gold",
-        price: "₹ 27,000",
-        showGst: true,
-        buyNow: true,
-        mostPopular: true,
-        features: [
-          "Latest features",
-          "Data migration",
-          "Advanced training",
-          "Priority support",
-          "Software updates"
-        ]
-      },
-      {
-        name: "Pre Tally.ERP 9 Silver to TallyPrime Gold",
-        description: "Upgrade to TallyPrime Gold",
-        price: "₹ 4,95,000",
+        name: "TallyPrime Silver to TallyPrime Gold",
+        description: "Upgrade from Prime Silver to Prime Gold",
+        price: "₹ 45,000",
         showGst: true,
         buyNow: true,
         features: [
@@ -1121,9 +1122,9 @@ const plans = {
         ]
       },
       {
-        name: "TallyPrime Silver to TallyPrime Gold",
-        description: "Upgrade from Prime Silver to Prime Gold",
-        price: "₹ 45,000",
+        name: "Pre Tally.ERP 9 Silver to TallyPrime Gold",
+        description: "Upgrade to TallyPrime Gold",
+        price: "₹ 49,500",
         showGst: true,
         buyNow: true,
         features: [
@@ -1163,21 +1164,21 @@ const plans = {
           "Priority support",
           "Software updates"
         ]
-      },
-      {
-        name: "Shopper 9 Diamond",
-        description: "Monthly Rental",
-        price: "₹ 1,500",
-        showGst: true,
-        buyNow: true,
-        features: [
-          "Retail-specific features",
-          "Inventory management",
-          "Billing & invoicing",
-          "Customer management",
-          "Basic support"
-        ]
       }
+      // {
+      //   name: "Shopper 9 Diamond",
+      //   description: "Monthly Rental",
+      //   price: "₹ 1,500",
+      //   showGst: true,
+      //   buyNow: true,
+      //   features: [
+      //     "Retail-specific features",
+      //     "Inventory management",
+      //     "Billing & invoicing",
+      //     "Customer management",
+      //     "Basic support"
+      //   ]
+      // }
     ],
     "virtual-user": [
       {
@@ -1207,7 +1208,7 @@ const plans = {
       buttonAction: handleTrial,
       features: [
         { name: "2 Virtual CPUs", included: true },
-        { name: "8 GB RAM", included: true },
+        { name: "8 GB RAM", inclwsuded: true },
         { name: "100 GB Storage", included: true },
         { name: "Basic Support", included: true },
         { name: "Advanced Networking", included: false },

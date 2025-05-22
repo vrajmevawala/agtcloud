@@ -106,12 +106,13 @@ export default function Products() {
                           <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                           <span>
                             <span className="font-medium">{service.name}</span> - 
-                            {service.slug == 'aws' && ' Run TallyPrime on Amazon Web Services'}
-                            {service.slug == 'new-products' && ' Latest Tally products and solutions'}
-                            {service.slug == 'software-services' && ' Professional software services'}
-                            {service.slug == 'upgrades' && ' Upgrade your existing Tally installation'}
-                            {service.slug == 'rental' && ' Flexible rental options for Tally software'}
+                            {service.slug == 'cloud' && ' Tallyprime and your business data anytime, anywhere with multiple users'}
+                            {service.slug == 'prime' && ' Accounting, inventory, e-Invoicing, and more - All in one software'}
+                            {service.slug == 'software-services' && ' Unlock the latest features,enhancement and online services'}
+                            {service.slug == 'upgrades' && ' Unlocks powerful collabration and efficiency for growing businesses'}
+                            {service.slug == 'rental' && ' Experience the full power of TallyPrime with low cost rental plans'}
                             {service.slug == 'virtual-user' && ' Virtual user solutions for remote access'}
+                            {service.slug == 'whatsapp' && ' Seamlessly share invoices, orders and other documents instantly via WhatsApp'}
 
                             {service.slug === 'remote-access' && ' Remote Access and Web Application Portal for seamless business connectivity'}
                             {service.slug === 'bare-metal' && ' Dedicated physical server offering performance, security and full control'}

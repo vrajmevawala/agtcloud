@@ -12,20 +12,22 @@ interface ProductCardProps {
 
 export function ProductCard({ title, description, icon, link }: ProductCardProps) {
   return (
-    <motion.div 
+    <motion.div
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
-      className="service-card h-full"
+      className="h-full"
     >
       <Card className="h-full shadow-lg transition-all duration-300 hover:shadow-xl border-0 bg-white overflow-hidden">
-        <CardContent className="p-0">
-          <div className="p-8 flex flex-col h-full">
-            <div className="bg-primary/10 rounded-2xl w-20 h-20 flex items-center justify-center mb-6 text-primary">
-              {icon}
+        <CardContent className="p-0 h-full">
+          <div className="p-8 flex flex-col justify-between h-full">
+            <div>
+              <div className="bg-primary/10 rounded-2xl w-20 h-20 flex items-center justify-center mb-6 text-primary">
+                {icon}
+              </div>
+              <h3 className="font-semibold text-xl mb-4 text-gray-900">{title}</h3>
+              <p className="text-gray-600 mb-6">{description}</p>
             </div>
-            <h3 className="font-semibold text-xl mb-4 text-gray-900">{title}</h3>
-            <p className="text-gray-600 mb-8 flex-grow">{description}</p>
-            <Link href={link} className="w-full mt-auto">
+            <Link href={link} className="mt-auto block">
               <div className="border-t border-gray-100 -mx-8 px-8 pt-5 pb-1">
                 <Button 
                   variant="outline" 
